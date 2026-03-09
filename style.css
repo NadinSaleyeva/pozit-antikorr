@@ -2694,7 +2694,7 @@ main {
 
 .compact-features li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     padding: 12px 0;
     font-size: 15px;
@@ -2702,6 +2702,7 @@ main {
     color: var(--color-text-dark);
     border-bottom: 1px solid #F5F5F5;
     transition: all 0.2s ease;
+    text-align: left;
 }
 
 .materials-compact-card:hover .compact-features li {
@@ -2717,6 +2718,7 @@ main {
     color: var(--color-primary-red);
     flex-shrink: 0;
     transition: transform 0.2s ease;
+    margin-top: 2px;
 }
 
 .feature-check {
