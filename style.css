@@ -2763,15 +2763,34 @@ main {
 }
 
 .guarantee-badge {
-    display: inline-block;
-    padding: 6px 16px;
-    background: #FEF2F2;
-    color: var(--color-primary-red);
-    border-radius: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 20px 32px;
+    background: var(--color-primary-red);
+    color: var(--color-white);
+    border-radius: 12px;
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-top: 30px;
+    box-shadow: 0 4px 16px rgba(206, 53, 60, 0.3);
+}
+
+.guarantee-badge strong {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.guarantee-badge span {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.3px;
+    opacity: 0.95;
 }
 
 @media (max-width: 992px) {
