@@ -174,7 +174,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === FLOATING ACTION BUTTONS (V2) ===
     const fabUpBtn = document.getElementById('fabUpBtn');
+    console.log('FAB Button element:', fabUpBtn);
+    console.log('FAB Button computed style:', fabUpBtn ? window.getComputedStyle(fabUpBtn) : 'not found');
+
     if (fabUpBtn) {
+        // Force visible immediately for debugging
+        fabUpBtn.classList.add('visible');
+        fabUpBtn.style.cssText = 'position: fixed !important; bottom: 30px !important; right: 30px !important; z-index: 99999 !important; background: red !important; width: 80px !important; height: 80px !important; display: flex !important; opacity: 1 !important;';
+        console.log('FAB Button forced visible with inline styles');
+
         // Show/hide up button based on scroll position
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
@@ -187,11 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Smooth scroll to top on click
         fabUpBtn.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log('FAB Button clicked!');
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
+    } else {
+        console.error('FAB Button not found in DOM!');
     }
 
     // === REVIEWS SLIDER ===
