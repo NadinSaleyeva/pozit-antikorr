@@ -494,7 +494,7 @@ main {
     justify-content: center;
     cursor: pointer;
     font-family: var(--font-primary);
-    width: 240px;
+    width: 300px;
     max-width: 100%;
     box-sizing: border-box;
 }
