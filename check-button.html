@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Test</title>
+    <style>
+        body { height: 2000px; background: #f0f0f0; padding: 20px; }
+        .test-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+        .test-btn {
+            width: 80px;
+            height: 80px;
+            background: red;
+            color: white;
+            border: 3px solid yellow;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Page - Scroll down</h1>
+    <p>If you can see a red button with yellow border in bottom-right corner, fixed positioning works.</p>
+    <div class="test-container">
+        <div class="test-btn">↑</div>
+    </div>
+</body>
+</html>
