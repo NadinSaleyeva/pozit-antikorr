@@ -979,11 +979,13 @@ main {
 /* --- Price Grid --- */
 .price-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-bottom: 30px;
     width: 100%;
-    max-width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .price-card {
@@ -1092,6 +1094,29 @@ main {
     font-weight: 700;
     white-space: nowrap;
     flex-shrink: 0;
+}
+
+/* Pricing Note */
+.pricing-note {
+    text-align: center;
+    padding: 40px 20px 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.pricing-note__price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary-red);
+    margin-bottom: 16px;
+    font-family: var(--font-secondary);
+}
+
+.pricing-note__text {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 /* Car Types Grid for Full Paint Card */

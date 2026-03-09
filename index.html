@@ -235,59 +235,8 @@
             <section id="services" class="services">
                 <div class="container">
                     <div class="section-header">
-                        <p class="section-subtitle">Прайс-лист</p>
+                        <p class="section-subtitle">Полная защита кузова</p>
                         <h2 class="section-title">УСЛУГИ <span>/</span> ЦЕНЫ</h2>
-                    </div>
-
-                    <!-- Car diagram -->
-                    <div class="car-diagram-wrap">
-                        <div class="car-diagram-area blueprint-mode">
-                            <div class="car-diagram-img-wrapper">
-                                <img src="assets/car-sedan.webp" alt="Чертеж автомобиля BMW" class="blueprint-img"
-                                    loading="lazy">
-
-                                <!-- интерактивные точки над деталями -->
-                                <div class="car-dot car-zone" data-part="Передний бампер" data-price="от 500 руб."
-                                    style="top: 78%; left: 5%;"></div>
-                                <div class="car-dot car-zone" data-part="Капот" data-price="550 руб."
-                                    style="top: 44%; left: 22%;"></div>
-                                <div class="car-dot car-zone" data-part="Переднее крыло" data-price="450 руб."
-                                    style="top: 62%; left: 25%;"></div>
-                                <div class="car-dot car-zone" data-part="Передняя дверь" data-price="480 руб."
-                                    style="top: 53%; left: 40%;"></div>
-                                <div class="car-dot car-zone" data-part="Задняя дверь" data-price="480 руб."
-                                    style="top: 53%; left: 60%;"></div>
-                                <div class="car-dot car-zone" data-part="Крыша" data-price="700 руб."
-                                    style="top: 15%; left: 55%;"></div>
-                                <div class="car-dot car-zone" data-part="Заднее крыло" data-price="450 руб."
-                                    style="top: 53%; left: 80%;"></div>
-                                <div class="car-dot car-zone" data-part="Задний бампер" data-price="от 500 руб."
-                                    style="top: 72%; left: 94%;"></div>
-                            </div>
-                        </div>
-
-                        <!-- Side info panel -->
-                        <div class="car-info-panel" id="carInfoPanel">
-                            <div class="car-info-panel__default" id="panelDefault">
-                                <div class="car-info-panel__icon">
-                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                                        <path d="M18 3L32 9V18C32 26 25 32 18 34C11 32 4 26 4 18V9L18 3Z"
-                                            stroke="#CE353C" stroke-width="1.6" />
-                                        <path d="M12 18L16 22L24 14" stroke="#CE353C" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                                <p class="car-info-panel__hint">Наведите на деталь<br>чтобы узнать цену</p>
-                            </div>
-                            <div class="car-info-panel__active" id="panelActive">
-                                <span class="car-info-panel__label">Деталь</span>
-                                <h3 class="car-info-panel__part" id="panelPart">—</h3>
-                                <div class="car-info-panel__divider"></div>
-                                <span class="car-info-panel__label">Стоимость работ</span>
-                                <div class="car-info-panel__price" id="panelPrice">—</div>
-                                <p class="car-info-panel__note">Финальная цена фиксируется в договоре после осмотра</p>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Price cards grid -->
@@ -295,84 +244,32 @@
                         <div class="price-card fade-up">
                             <div class="price-card__head">
                                 <span class="price-card__num">01</span>
-                                <h3 class="price-card__title">Локальная<br>покраска</h3>
+                                <h3 class="price-card__title">Базовый<br>антикор</h3>
                             </div>
                             <ul class="price-list">
-                                <li><span>1 элемент (бампер, дверь, крыло)</span><strong>от 450 руб.</strong></li>
-                                <li><span>Устранение царапин (до 10 см)</span><strong>от 450 руб.</strong></li>
-                                <li><span>Устранение сколов</span><strong>от 450 руб.</strong></li>
+                                <li><span>Обработка днища</span></li>
+                                <li><span>Обработка порогов</span></li>
+                                <li><span>Колёсные арки</span></li>
                             </ul>
                         </div>
                         <div class="price-card fade-up delay-100">
                             <div class="price-card__head">
                                 <span class="price-card__num">02</span>
-                                <h3 class="price-card__title">Частичная<br>покраска</h3>
+                                <h3 class="price-card__title">Антикор скрытых<br>полостей</h3>
                             </div>
                             <ul class="price-list">
-                                <li><span>2–3 элемента</span><strong>от 800 руб.</strong></li>
-                                <li><span>4–5 элементов</span><strong>от 1680 руб.</strong></li>
-                                <li><span>Бампер (передний / задний)</span><strong>500 / 500 руб.</strong></li>
-                                <li><span>Капот</span><strong>550 руб.</strong></li>
-                                <li><span>Крыша</span><strong>700 руб.</strong></li>
-                                <li><span>Дверь</span><strong>480 руб.</strong></li>
-                                <li><span>Крыло</span><strong>450 руб.</strong></li>
-                            </ul>
-                        </div>
-                        <div class="price-card price-card--featured fade-up delay-200">
-                            <div class="price-card__head">
-                                <span class="price-card__num">03</span>
-                                <h3 class="price-card__title">Полная<br>покраска</h3>
-                            </div>
-                            <div class="car-types-grid">
-                                <!-- Sedan -->
-                                <div class="car-type-item">
-                                    <div class="car-icon">
-                                        <img src="assets/sedan1.webp" alt="Седан" loading="lazy">
-                                    </div>
-                                    <span class="car-type-label">Седан</span>
-                                    <strong class="car-type-price">от 5000 руб.</strong>
-                                </div>
-                                <!-- Hatchback/Wagon -->
-                                <div class="car-type-item">
-                                    <div class="car-icon">
-                                        <img src="assets/wagon_hatchback1.webp" alt="Универсал / Хэтчбек"
-                                            loading="lazy">
-                                    </div>
-                                    <span class="car-type-label">Универсал / Хэтчбек</span>
-                                    <strong class="car-type-price">от 5500 руб.</strong>
-                                </div>
-                                <!-- Crossover/SUV -->
-                                <div class="car-type-item">
-                                    <div class="car-icon">
-                                        <img src="assets/crossover_suv1.webp" alt="Кроссовер / Внедорожник"
-                                            loading="lazy">
-                                    </div>
-                                    <span class="car-type-label">Кроссовер / Внедорожник</span>
-                                    <strong class="car-type-price">от 5500 руб.</strong>
-                                </div>
-                                <!-- Premium -->
-                                <div class="car-type-item">
-                                    <div class="car-icon">
-                                        <img src="assets/premium_car1.webp" alt="Премиум-авто" loading="lazy">
-                                    </div>
-                                    <span class="car-type-label">Премиум-авто</span>
-                                    <strong class="car-type-price">от 6000 руб.</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="price-card fade-up delay-300">
-                            <div class="price-card__head">
-                                <span class="price-card__num">04</span>
-                                <h3 class="price-card__title">Дополнительные<br>услуги</h3>
-                            </div>
-                            <ul class="price-list">
-                                <li><span>Кузовной ремонт (рихтовка)</span><strong>от 300 руб.</strong></li>
-                                <li><span>Полировка (1 эл. / полная)</span><strong>100 / 600 руб.</strong></li>
-                                <li><span>Матовая покраска</span><strong>цена +60%</strong></li>
-                                <li><span>Антикор</span><strong>от 850 руб.</strong></li>
+                                <li><span>Двери, стойки, лонжероны</span></li>
+                                <li><span>ML-метод нагнетания</span></li>
+                                <li><span>Продувка и контроль</span></li>
                             </ul>
                         </div>
                     </div>
+
+                    <div class="pricing-note">
+                        <p class="pricing-note__price">от 850 руб.</p>
+                        <p class="pricing-note__text">Финальная цена фиксируется в договоре после осмотра</p>
+                    </div>
+                </div>
             </section>
 
             <!-- === MATERIALS SECTION === -->
@@ -649,7 +546,7 @@
             <div class="guarantee-grid">
                 <div class="guarantee-card guarantee-card--single fade-up">
                     <ul>
-                        <li>Письменный договор с указанием гарантийного срока</li>
+                        <li>ГАРАНТИЯ ДО 3 ЛЕТ на антикоррозийную обработку</li>
                         <li>Видеофиксация всех зон обработки до и после</li>
                         <li>Бесплатное восстановление при появлении ржавчины в зоне обработки</li>
                     </ul>
