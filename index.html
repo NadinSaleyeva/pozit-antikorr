@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Покраска автомобиля в Минске — ООО «Позит»</title>
+    <meta name="description"
+        content="Профессиональная покраска автомобилей в Минске. Защита результата 6 месяцев, премиальные материалы R-M и 3M. Локальная и полная покраска от 450 руб.">
+    <meta name="keywords"
+        content="покраска автомобиля минск, кузовной ремонт, автомалярка, покраска авто, ремонт бампера минск">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pozit.by/">
+    <meta property="og:title" content="Покраска автомобиля в Минске — ООО «Позит»">
+    <meta property="og:description"
+        content="Профессиональная покраска автомобилей. Защита результата 6 месяцев, премиальные материалы.">
+    <meta property="og:image" content="https://pozit.by/painter-hero.webp">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://code.iconify.design">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="painter-hero.webp" as="image">
+    <link rel="preload" href="style.css" as="style">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- === HEADER === -->
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__left">
+                        <!-- Актуальный логотип -->
+                        <a href="/" class="header__logo-link">
+                            <img src="Logo_red.svg" alt="POZIT Logo" class="logo-img">
+                        </a>
+                    </div>
+
+                    <nav class="header__nav">
+                        <a href="#services">ЦЕНЫ</a>
+                        <a href="#before-after">НАШИ РАБОТЫ</a>
+                        <a href="#reviews">ОТЗЫВЫ</a>
+                        <a href="#contacts">КОНТАКТЫ</a>
+                    </nav>
+
+                    <div class="header__actions">
+                        <div class="header__contacts-row">
+                            <a href="tel:+375293597619" class="header__phone">+375 (29) 359-76-19</a>
+                            <div class="header__socials">
+                                <!-- Telegram -->
+                                <a href="https://t.me/+375293597619" aria-label="Telegram"
+                                    style="display: flex; width: 24px; height: 24px; align-items: center; justify-content: center;">
+                                    <img src="assets/icons/telegram.svg" width="20" height="20" alt="Telegram">
+                                </a>
+                                <!-- WhatsApp -->
+                                <a href="https://wa.me/375293597619" aria-label="WhatsApp"
+                                    style="display: flex; width: 24px; height: 24px; align-items: center; justify-content: center;">
+                                    <img src="assets/icons/whatsapp.svg" width="20" height="20" alt="WhatsApp">
+                                </a>
+                                <!-- Viber -->
+                                <a href="viber://chat?number=%2B375293597619" aria-label="Viber"
+                                    style="display: flex; width: 24px; height: 24px; align-items: center; justify-content: center;">
+                                    <img src="assets/icons/viber.svg" width="20" height="20" alt="Viber">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Burger Button -->
+                        <button type="button" class="burger-btn" id="burgerBtn"
+                            style="outline: none !important; border: none !important;">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobileMenu">
+                <a href="#services">ЦЕНЫ <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+                <a href="#before-after">НАШИ РАБОТЫ <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+                <a href="#reviews">ОТЗЫВЫ <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+                <a href="#contacts">КОНТАКТЫ <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+            </div>
+        </header>
+
+
+        <!-- === MAIN CONTENT === -->
+        <main>
+            <!-- === HERO SECTION === -->
+            <section id="hero" class="hero">
+                <div class="container">
+                    <div class="hero__background-text">POZIT</div>
+
+                    <div class="hero__content">
+                        <div class="hero__text-area">
+                            <p class="brand-name">Профессиональная</p>
+                            <h1 class="product-title">ПОКРАСКА<br>АВТОМОБИЛЯ</h1>
+                            <p class="product-subtitle">Кузовные работы. Восстановление покрытия<br>с использованием
+                                премиальных материалов.<br>Защита, блеск и долговечность<br>для вашего авто.</p>
+                            <div class="product-actions">
+                                <a href="#contacts" class="btn-shop" style="text-transform: uppercase;">Расчёт по
+                                    фото</a>
+                                <a href="#services" class="price-box">СМОТРЕТЬ ЦЕНЫ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === BENEFITS SECTION === -->
+            <section id="benefits" class="benefits">
+                <div class="container">
+                    <div class="benefits__grid">
+                        <!-- Professional -->
+                        <div class="benefit-item fade-up">
+                            <div class="benefit-item__content">
+                                <h3 class="benefit-item__title"><iconify-icon icon="ph:briefcase" width="20"
+                                        style="margin-right: 8px; vertical-align: -2px;"></iconify-icon>Профессиональный
+                                    подход</h3>
+                                <p class="benefit-item__text"><strong>Опытные мастера</strong> и использование
+                                    <strong>премиальных материалов</strong> для безупречного результата.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Insurance -->
+                        <div class="benefit-item fade-up delay-100">
+                            <div class="benefit-item__content">
+                                <h3 class="benefit-item__title"><iconify-icon icon="ph:shield-check" width="20"
+                                        style="margin-right: 8px; vertical-align: -2px;"></iconify-icon>Документы для
+                                    страховых</h3>
+                                <p class="benefit-item__text">Полное <strong>документальное сопровождение</strong> и
+                                    оформление документов для страховых компаний КАСКО/
+                                    ОСГО.</p>
+                            </div>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="benefit-item fade-up delay-200">
+                            <div class="benefit-item__content">
+                                <h3 class="benefit-item__title"><iconify-icon icon="ph:credit-card" width="20"
+                                        style="margin-right: 8px; vertical-align: -2px;"></iconify-icon>Прозрачная
+                                    цена</h3>
+                                <p class="benefit-item__text"><strong>Безналичный расчет</strong> и строго
+                                    <strong>фиксированная цена</strong>, закрепленная в договоре.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Urgent -->
+                        <div class="benefit-item fade-up delay-300">
+                            <div class="benefit-item__content">
+                                <h3 class="benefit-item__title"><iconify-icon icon="ph:lightning" width="20"
+                                        style="margin-right: 8px; vertical-align: -2px;"></iconify-icon>Срочный ремонт
+                                </h3>
+                                <p class="benefit-item__text"><strong>Экспресс-режим</strong> работы, включая выходные
+                                    дни, для максимально <strong>быстрого восстановления</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- === SERVICES / PRICING SECTION === -->
+            <section id="services" class="services">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Прайс-лист</p>
+                        <h2 class="section-title">УСЛУГИ <span>/</span> ЦЕНЫ</h2>
+                    </div>
+
+                    <!-- Car diagram -->
+                    <div class="car-diagram-wrap">
+                        <div class="car-diagram-area blueprint-mode">
+                            <div class="car-diagram-img-wrapper">
+                                <img src="assets/car-sedan.webp" alt="Чертеж автомобиля BMW" class="blueprint-img"
+                                    loading="lazy">
+
+                                <!-- интерактивные точки над деталями -->
+                                <div class="car-dot car-zone" data-part="Передний бампер" data-price="от 500 руб."
+                                    style="top: 78%; left: 5%;"></div>
+                                <div class="car-dot car-zone" data-part="Капот" data-price="550 руб."
+                                    style="top: 44%; left: 22%;"></div>
+                                <div class="car-dot car-zone" data-part="Переднее крыло" data-price="450 руб."
+                                    style="top: 62%; left: 25%;"></div>
+                                <div class="car-dot car-zone" data-part="Передняя дверь" data-price="480 руб."
+                                    style="top: 53%; left: 40%;"></div>
+                                <div class="car-dot car-zone" data-part="Задняя дверь" data-price="480 руб."
+                                    style="top: 53%; left: 60%;"></div>
+                                <div class="car-dot car-zone" data-part="Крыша" data-price="700 руб."
+                                    style="top: 15%; left: 55%;"></div>
+                                <div class="car-dot car-zone" data-part="Заднее крыло" data-price="450 руб."
+                                    style="top: 53%; left: 80%;"></div>
+                                <div class="car-dot car-zone" data-part="Задний бампер" data-price="от 500 руб."
+                                    style="top: 72%; left: 94%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Side info panel -->
+                        <div class="car-info-panel" id="carInfoPanel">
+                            <div class="car-info-panel__default" id="panelDefault">
+                                <div class="car-info-panel__icon">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M18 3L32 9V18C32 26 25 32 18 34C11 32 4 26 4 18V9L18 3Z"
+                                            stroke="#CE353C" stroke-width="1.6" />
+                                        <path d="M12 18L16 22L24 14" stroke="#CE353C" stroke-width="1.6"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <p class="car-info-panel__hint">Наведите на деталь<br>чтобы узнать цену</p>
+                            </div>
+                            <div class="car-info-panel__active" id="panelActive">
+                                <span class="car-info-panel__label">Деталь</span>
+                                <h3 class="car-info-panel__part" id="panelPart">—</h3>
+                                <div class="car-info-panel__divider"></div>
+                                <span class="car-info-panel__label">Стоимость работ</span>
+                                <div class="car-info-panel__price" id="panelPrice">—</div>
+                                <p class="car-info-panel__note">Финальная цена фиксируется в договоре после осмотра</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price cards grid -->
+                    <div class="price-grid">
+                        <div class="price-card fade-up">
+                            <div class="price-card__head">
+                                <span class="price-card__num">01</span>
+                                <h3 class="price-card__title">Локальная<br>покраска</h3>
+                            </div>
+                            <ul class="price-list">
+                                <li><span>1 элемент (бампер, дверь, крыло)</span><strong>от 450 руб.</strong></li>
+                                <li><span>Устранение царапин (до 10 см)</span><strong>от 450 руб.</strong></li>
+                                <li><span>Устранение сколов</span><strong>от 450 руб.</strong></li>
+                            </ul>
+                        </div>
+                        <div class="price-card fade-up delay-100">
+                            <div class="price-card__head">
+                                <span class="price-card__num">02</span>
+                                <h3 class="price-card__title">Частичная<br>покраска</h3>
+                            </div>
+                            <ul class="price-list">
+                                <li><span>2–3 элемента</span><strong>от 800 руб.</strong></li>
+                                <li><span>4–5 элементов</span><strong>от 1680 руб.</strong></li>
+                                <li><span>Бампер (передний / задний)</span><strong>500 / 500 руб.</strong></li>
+                                <li><span>Капот</span><strong>550 руб.</strong></li>
+                                <li><span>Крыша</span><strong>700 руб.</strong></li>
+                                <li><span>Дверь</span><strong>480 руб.</strong></li>
+                                <li><span>Крыло</span><strong>450 руб.</strong></li>
+                            </ul>
+                        </div>
+                        <div class="price-card price-card--featured fade-up delay-200">
+                            <div class="price-card__head">
+                                <span class="price-card__num">03</span>
+                                <h3 class="price-card__title">Полная<br>покраска</h3>
+                            </div>
+                            <div class="car-types-grid">
+                                <!-- Sedan -->
+                                <div class="car-type-item">
+                                    <div class="car-icon">
+                                        <img src="assets/sedan1.webp" alt="Седан" loading="lazy">
+                                    </div>
+                                    <span class="car-type-label">Седан</span>
+                                    <strong class="car-type-price">от 5000 руб.</strong>
+                                </div>
+                                <!-- Hatchback/Wagon -->
+                                <div class="car-type-item">
+                                    <div class="car-icon">
+                                        <img src="assets/wagon_hatchback1.webp" alt="Универсал / Хэтчбек"
+                                            loading="lazy">
+                                    </div>
+                                    <span class="car-type-label">Универсал / Хэтчбек</span>
+                                    <strong class="car-type-price">от 5500 руб.</strong>
+                                </div>
+                                <!-- Crossover/SUV -->
+                                <div class="car-type-item">
+                                    <div class="car-icon">
+                                        <img src="assets/crossover_suv1.webp" alt="Кроссовер / Внедорожник"
+                                            loading="lazy">
+                                    </div>
+                                    <span class="car-type-label">Кроссовер / Внедорожник</span>
+                                    <strong class="car-type-price">от 5500 руб.</strong>
+                                </div>
+                                <!-- Premium -->
+                                <div class="car-type-item">
+                                    <div class="car-icon">
+                                        <img src="assets/premium_car1.webp" alt="Премиум-авто" loading="lazy">
+                                    </div>
+                                    <span class="car-type-label">Премиум-авто</span>
+                                    <strong class="car-type-price">от 6000 руб.</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price-card fade-up delay-300">
+                            <div class="price-card__head">
+                                <span class="price-card__num">04</span>
+                                <h3 class="price-card__title">Дополнительные<br>услуги</h3>
+                            </div>
+                            <ul class="price-list">
+                                <li><span>Кузовной ремонт (рихтовка)</span><strong>от 300 руб.</strong></li>
+                                <li><span>Полировка (1 эл. / полная)</span><strong>100 / 600 руб.</strong></li>
+                                <li><span>Матовая покраска</span><strong>цена +60%</strong></li>
+                                <li><span>Антикор</span><strong>от 850 руб.</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+            </section>
+
+            <!-- === MATERIALS SECTION === -->
+            <section id="materials" class="materials-section">
+                <div class="materials-bg-overlay"></div>
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Технологии</p>
+                        <h2 class="section-title">ОБОРУДОВАНИЕ <span>/</span> МАТЕРИАЛЫ</h2>
+                    </div>
+
+                    <div class="materials-compact-grid">
+                        <!-- Equipment Block -->
+                        <div class="materials-compact-card materials-compact-card--equipment fade-up">
+                            <div class="equipment-icon-large">
+                                <iconify-icon icon="ph:cube"></iconify-icon>
+                            </div>
+                            <div class="card-content">
+                                <h3>Покрасочная камера</h3>
+                                <ul class="compact-features">
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>Климат-контроль</li>
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>ИК-сушка</li>
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>Фильтрация воздуха</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- R-M Brand -->
+                        <div class="materials-compact-card fade-up delay-100">
+                            <div class="compact-logo">
+                                <img src="assets/logos/r-m-logo.webp" alt="R-M" loading="lazy">
+                            </div>
+                            <div class="card-content">
+                                <h3>Краски и покрытия</h3>
+                                <ul class="compact-features">
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>Краски премиум</li>
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>3-слойное покрытие</li>
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>Лаки и грунты</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 3M Brand -->
+                        <div class="materials-compact-card fade-up delay-200">
+                            <div class="compact-logo">
+                                <img src="assets/logos/3m-logo.webp" alt="3M" loading="lazy">
+                            </div>
+                            <div class="card-content">
+                                <h3>Расходные материалы</h3>
+                                <ul class="compact-features">
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>Абразивы</li>
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>Расходники</li>
+                                    <li><iconify-icon icon="ph:check-circle-fill"></iconify-icon>Полировка</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === TIMELINE SECTION === -->
+            <section id="timeline" class="timeline">
+                <div class="container">
+                    <div class="section-header section-header--light">
+                        <p class="section-subtitle">Ориентировочное время</p>
+                        <h2 class="section-title">СРОКИ <span>/</span> ВЫПОЛНЕНИЯ</h2>
+                    </div>
+
+                    <div class="timeline-grid">
+                        <div class="timeline-card fade-up">
+                            <div class="timeline-card__time">
+                                <span class="time-value">72</span>
+                                <span class="time-unit">часа</span>
+                            </div>
+                            <h3 class="timeline-card__title">Локальная покраска</h3>
+                            <p class="timeline-card__desc">1 элемент</p>
+                        </div>
+
+                        <div class="timeline-card fade-up delay-100">
+                            <div class="timeline-card__time">
+                                <span class="time-value">4</span>
+                                <span class="time-unit">дня</span>
+                            </div>
+                            <h3 class="timeline-card__title">Частичная покраска</h3>
+                            <p class="timeline-card__desc">2-4 элемента</p>
+                        </div>
+
+                        <div class="timeline-card fade-up delay-200">
+                            <div class="timeline-card__time">
+                                <span class="time-value">30</span>
+                                <span class="time-unit">дней</span>
+                            </div>
+                            <h3 class="timeline-card__title">Полная покраска</h3>
+                            <p class="timeline-card__desc">Стандарт</p>
+                        </div>
+
+                        <div class="timeline-card timeline-card--featured fade-up delay-300">
+                            <div class="timeline-card__time">
+                                <span class="time-value">35</span>
+                                <span class="time-unit">дней</span>
+                            </div>
+                            <h3 class="timeline-card__title">Кузовной ремонт + покраска</h3>
+                            <p class="timeline-card__desc">Стандарт</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-note">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 8v4l3 3" />
+                        </svg>
+                        <p>Указаны средние сроки для стандартных работ. Точное время фиксируется мастером после осмотра.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === BEFORE/AFTER SECTION === -->
+
+            <section id="before-after" class="before-after">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Галерея ремонтов</p>
+                        <h2 class="section-title">НАШИ <span>/</span> РАБОТЫ</h2>
+                    </div>
+
+                    <div class="before-after-wrapper">
+                        <div class="before-after-grid">
+                            <!-- Case 1 -->
+                            <div class="comparison-card" data-case="1">
+                                <div class="comparison-img after">
+                                    <img src="case1_before.webp" alt="Case 1 Before" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="case1_after.webp" alt="Case 1 After" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Case 2 -->
+                            <div class="comparison-card" data-case="2">
+                                <div class="comparison-img after">
+                                    <img src="case2_before.webp" alt="Case 2 Before" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="case2_after.webp" alt="Case 2 After" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Case 3 -->
+                            <div class="comparison-card" data-case="3">
+                                <div class="comparison-img after">
+                                    <img src="case3_before.webp" alt="Case 3 Before" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="case3_after.webp" alt="Case 3 After" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Case 4 -->
+                            <div class="comparison-card" data-case="4">
+                                <div class="comparison-img after">
+                                    <img src="case4_before.webp" alt="Case 4 Before" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="case4_after.webp" alt="Case 4 After" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Case 5 -->
+                            <div class="comparison-card" data-case="5">
+                                <div class="comparison-img after">
+                                    <img src="case5_before.webp" alt="Case 5 Before" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="case5_after.webp" alt="Case 5 After" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Case 6 -->
+                            <div class="comparison-card" data-case="6">
+                                <div class="comparison-img after">
+                                    <img src="case6_before.webp" alt="Case 6 Before" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
+                                    <img src="case6_after.webp" alt="Case 6 After" draggable="false" loading="lazy">
+                                </div>
+                                <div class="comparison-slider" style="left: 50%;">
+                                    <div class="slider-handle">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2">
+                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Mobile Navigation (Visible only on mobile) -->
+                    <div class="mobile-nav-comparison">
+                        <button class="nav-arrow prev-case">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="dots-indicator">
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <button class="nav-arrow next-case">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+    </div>
+    </section>
+
+    <!-- === GUARANTEE SECTION === -->
+    <section id="guarantee" class="guarantee-section">
+        <div class="guarantee-bg-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Ваше спокойствие</p>
+                <h2 class="section-title">ГАРАНТИИ <span>/</span> КАЧЕСТВО</h2>
+            </div>
+            <div class="guarantee-grid">
+                <div class="guarantee-card guarantee-card--single fade-up">
+                    <ul>
+                        <li>Точное попадание в цвет</li>
+                        <li>Защита результата 6 месяцев</li>
+                        <li>Работаем по договору</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- === FAQ SECTION === -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Часто задаваемые вопросы </p>
+                <h2 class="section-title"> ВОПРОСЫ <span>/</span> ОТВЕТЫ</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item fade-up">
+                    <div class="faq-item__header">
+                        <span class="faq-item__question">Может ли измениться цена после осмотра?</span>
+                        <div class="faq-item__arrow">
+                            <iconify-icon icon="ph:caret-down"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="faq-item__content">
+                        <div class="faq-item__answer">
+                            <p>Цена <strong>фиксируется в договоре</strong>. Изменение возможно только при обнаружении
+                                <strong>скрытых дефектов</strong>. Перед началом дополнительных работ мы обязательно
+                                <strong>согласовываем</strong> их с вами по телефону, предоставляя <strong>фото и видео
+                                    отчеты</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up delay-100">
+                    <div class="faq-item__header">
+                        <span class="faq-item__question">Есть ли скрытые платежи?</span>
+                        <div class="faq-item__arrow">
+                            <iconify-icon icon="ph:caret-down"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="faq-item__content">
+                        <div class="faq-item__answer">
+                            <p>Нет. Мойка автомобиля, все расходники и <strong>профессиональные лакокрасочные
+                                    материалы</strong> изначально включены в согласованную стоимость. <strong>Никаких
+                                    доплат</strong> в конце работы.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up delay-200">
+                    <div class="faq-item__header">
+                        <span class="faq-item__question">Нужна ли предоплата?</span>
+                        <div class="faq-item__arrow">
+                            <iconify-icon icon="ph:caret-down"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="faq-item__content">
+                        <div class="faq-item__answer">
+                            <p>Нет. Мы работаем на доверии и <strong>не берем предоплату</strong>. Оплата за ремонт
+                                производится только <strong>по факту выполненных работ</strong> в полном объеме.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up delay-300">
+                    <div class="faq-item__header">
+                        <span class="faq-item__question">Что входит в защиту на 6 месяцев?</span>
+                        <div class="faq-item__arrow">
+                            <iconify-icon icon="ph:caret-down"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="faq-item__content">
+                        <div class="faq-item__answer">
+                            <ul class="faq-list">
+                                <li>Отслоение краски или лака</li>
+                                <li>Выгорание цвета на солнце</li>
+                                <li>Изменение первоначального оттенка</li>
+                                <li>Появление коррозии в местах ремонта</li>
+                                <li>Растрескивание лакового покрытия</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up delay-400">
+                    <div class="faq-item__header">
+                        <span class="faq-item__question">Можно ли сделать быстрее (экспресс-ремонт)?</span>
+                        <div class="faq-item__arrow">
+                            <iconify-icon icon="ph:caret-down"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="faq-item__content">
+                        <div class="faq-item__answer">
+                            <p>Да, мы можем сократить стандартный срок за счет сверхурочной работы мастеров. В этом
+                                случае
+                                применяется наценка:</p>
+                            <ul class="faq-list">
+                                <li><strong>Экспресс-ремонт</strong> — +20% к стоимости</li>
+                                <li><strong>Работа в выходные дни</strong> — +100% к стоимости рабочих смен</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Что о нас говорят</p>
+                <h2 class="section-title">ОТЗЫВЫ <span>/</span> КЛИЕНТОВ</h2>
+            </div>
+        </div>
+
+        <div class="reviews-slider-container">
+            <button class="review-nav-arrow review-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button class="review-nav-arrow review-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+
+            <div class="reviews-track-wrapper">
+                <div class="reviews-track">
+                    <!-- Card 1 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                        <p class="review-text">«Обратился после ДТП, сделали бампер и крыло так, что даже прибором не
+                            найти
+                            разницы. Очень доволен сроками и подходом!»</p>
+                        <div class="review-author">
+                            <img src="assets/clients/alexandr.webp" alt="Алексей" class="review-avatar">
+                            <div class="review-author-info">
+                                <div class="review-name">Алексей С.</div>
+                                <div class="review-car">Volkswagen Tiguan</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="review-card active">
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                        <p class="review-text">«Ребята просто спасли мою машину! Удалили три вмятины без покраски, хотя
+                            другие СТО говорили, что нужно красить всю деталь. Сэкономили кучу денег и времени.»</p>
+                        <div class="review-author">
+                            <img src="assets/clients/alena_b.webp" alt="Марина" class="review-avatar">
+                            <div class="review-author-info">
+                                <div class="review-name">Марина В.</div>
+                                <div class="review-car">Mazda CX-5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                        <p class="review-text">«Отличная покраска, 100% попадание в цвет. Рекомендую этот сервис. Отдал
+                            машину в понедельник, в среду уже забрал готовую.»</p>
+                        <div class="review-author">
+                            <img src="assets/clients/andrey-strelkovsky.webp" alt="Дмитрий" class="review-avatar">
+                            <div class="review-author-info">
+                                <div class="review-name">Дмитрий К.</div>
+                                <div class="review-car">BMW X5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                            <iconify-icon icon="ph:star-fill"></iconify-icon>
+                        </div>
+                        <p class="review-text">«Премиальный сервис, вежливые мастера. Сделали полировку и нанесли
+                            защитную
+                            керамику. Машина блестит как из салона, очень доволен результатом!»</p>
+                        <div class="review-author">
+                            <img src="assets/clients/vitaly-k.webp" alt="Евгений" class="review-avatar">
+                            <div class="review-author-info">
+                                <div class="review-name">Евгений М.</div>
+                                <div class="review-car">Mercedes E-Class</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile scroll indicators -->
+            <div class="review-scroll-indicators">
+                <span class="review-dot active"></span>
+                <span class="review-dot"></span>
+                <span class="review-dot"></span>
+                <span class="review-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- === CONTACTS SECTION === -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <div class="contacts__background-text">CONTACTS</div>
+            <div class="section-header">
+                <p class="section-subtitle">Контакты</p>
+                <h2 class="section-title">СВЯЗЬ <span>/</span> С НАМИ</h2>
+            </div>
+
+            <div class="contacts__main-row">
+                <!-- Left Card: CTA (Быстрая оценка) -->
+                <!-- Left Card: CTA (Быстрая оценка) - V3 Split -->
+                <div class="v3-card">
+                    <h3 class="v3-title">РАСЧЁТ ПО ФОТО</h3>
+                    <p class="v3-desc">Отправьте 2-3 фото повреждения - мы рассчитаем стоимость ремонта</p>
+
+                    <div class="v3-icons-row">
+                        <a href="https://t.me/+375293597619" aria-label="Telegram" class="v3-icon">
+                            <img src="assets/icons/telegram.svg" width="28" alt="Telegram">
+                        </a>
+                        <a href="https://wa.me/375293597619" aria-label="WhatsApp" class="v3-icon">
+                            <img src="assets/icons/whatsapp.svg" width="28" alt="WhatsApp">
+                        </a>
+                        <a href="viber://chat?number=%2B375293597619" aria-label="Viber" class="v3-icon">
+                            <img src="assets/icons/viber.svg" width="28" alt="Viber">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Card: Способы Оплаты -->
+                <div class="payment-methods-wrapper">
+                    <h3 class="v3-title payment-title">СПОСОБЫ ОПЛАТЫ</h3>
+                    <div class="payment-grid">
+                        <div class="payment-item">
+                            <h4 class="payment-item__title"><iconify-icon icon="ph:money" width="20"
+                                    style="margin-right: 8px; vertical-align: -2px;"></iconify-icon>Наличные</h4>
+                            <p class="payment-item__text">Оплата при получении авто</p>
+                        </div>
+                        <div class="payment-item">
+                            <h4 class="payment-item__title"><iconify-icon icon="ph:credit-card" width="20"
+                                    style="margin-right: 8px; vertical-align: -2px;"></iconify-icon>Банковские карты
+                            </h4>
+                            <p class="payment-item__text">Visa / MasterCard / Мир</p>
+                        </div>
+                        <div class="payment-item">
+                            <h4 class="payment-item__title"><iconify-icon icon="ph:bank" width="20"
+                                    style="margin-right: 8px; vertical-align: -2px;"></iconify-icon>Безналичный расчёт
+                            </h4>
+                            <p class="payment-item__text">Для юридических лиц</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === YANDEX MAP SECTION === -->
+    <section id="map-yandex" class="map-section" style="padding-bottom: 40px;">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">КАРТА</p>
+                <h2 class="section-title">КАК <span>/</span> ПРОЕХАТЬ</h2>
+            </div>
+            <div class="map-layout">
+                <div class="map-card">
+                    <script type="text/javascript" charset="utf-8" async
+                        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af8a81c1a3e6c11840819d97c0852d59716b732d7916b821c4e4c6b80a8c82e20&amp;width=1200&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+                <div class="map-card-address">
+                    <div class="map-address-main">
+                        <div class="map-address-text">
+                            <span class="map-address-label">Адрес мастерской:</span>
+                            <span class="map-address-value">г. Минск, ул. Олешева 137А</span>
+                        </div>
+                    </div>
+                    <div class="map-route-actions">
+                        <a href="https://yandex.ru/maps/?rtext=~53.947936,27.570215&rtt=auto" target="_blank"
+                            class="map-route-btn">
+                            <img src="assets/logos/Yandex_Maps.webp" alt="Yandex Maps" class="route-icon"
+                                loading="lazy">
+                            <span class="map-route-btn-text">Маршрут в <strong>Яндекс</strong></span>
+                        </a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=53.947936,27.570215" target="_blank"
+                            class="map-route-btn">
+                            <img src="assets/logos/Google_Maps_icon.webp" alt="Google Maps" class="route-icon"
+                                loading="lazy">
+                            <span class="map-route-btn-text">Маршрут в <strong>Google</strong></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </main>
+
+    <!-- === FOOTER === -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <!-- Left Part -->
+                <div class="footer__left">
+                    <a href="/" class="footer__logo-link">
+                        <img src="Logo_red.svg" alt="POZIT Logo" class="footer__logo-img">
+                    </a>
+                    <p class="footer__desc">Покраска авто в Минске</p>
+                </div>
+
+                <!-- Right Part -->
+                <div class="footer__right">
+                    <p class="footer__company">ООО «Позит»</p>
+                    <p class="footer__text">УНП 100142944</p>
+                    <p class="footer__text">Юридический адрес: г. Минск, ул. Кедышко д.24 каб.8</p>
+                    <p class="footer__copyright">&copy; 1993&ndash;2026 Pozit.by</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- === FLOATING ACTION BUTTONS === -->
+    <div class="fab-v2-container">
+        <!-- Scroll Up Button -->
+        <a href="#" class="fab-v2-up" id="fabUpBtn" aria-label="Вернуться наверх">
+            <iconify-icon icon="ph:arrow-up" width="20"></iconify-icon>
+        </a>
+        <!-- Call Button -->
+        <a href="tel:+375293597619" class="fab-v2-call">
+            <iconify-icon icon="ph:phone-fill" width="22"></iconify-icon>
+            <div class="fab-v2-call-text">
+                <strong>Позвонить</strong>
+                <span>Пн-Пт: 9:00 - 18:00</span>
+            </div>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

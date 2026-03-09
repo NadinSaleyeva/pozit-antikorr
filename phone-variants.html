@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Варианты кнопки звонка</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        body {
+            background: #E5E5E5;
+            padding: 50px;
+            font-family: var(--font-primary);
+            display: flex;
+            justify-content: center;
+        }
+
+        .variants-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1300px;
+            width: 100%;
+        }
+
+        .variant-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .variant-title {
+            font-family: var(--font-secondary);
+            font-size: 24px;
+            text-transform: uppercase;
+            text-align: center;
+            color: #333;
+        }
+
+        .v-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hours {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* V1: Solid Red Button */
+        .btn-call-v1 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background-color: var(--color-primary-red);
+            color: white;
+            font-family: var(--font-secondary);
+            font-size: 24px;
+            font-weight: 700;
+            padding: 15px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(206, 53, 60, 0.3);
+        }
+
+        .btn-call-v1:hover {
+            background-color: #A9262C;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(206, 53, 60, 0.4);
+        }
+
+        /* V2: Ghost Red Outline */
+        .btn-call-v2 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background-color: transparent;
+            color: var(--color-text-dark);
+            font-family: var(--font-secondary);
+            font-size: 24px;
+            font-weight: 700;
+            padding: 13px 33px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 2px solid var(--color-primary-red);
+            transition: all 0.3s ease;
+        }
+
+        .btn-call-v2:hover {
+            background-color: var(--color-primary-red);
+            color: white;
+        }
+
+        .btn-call-v2 iconify-icon {
+            color: var(--color-primary-red);
+            transition: color 0.3s ease;
+        }
+
+        .btn-call-v2:hover iconify-icon {
+            color: white;
+        }
+
+        /* V3: Soft & Minimal */
+        .btn-call-v3 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background-color: #F8F9FA;
+            color: var(--color-text-dark);
+            font-family: var(--font-secondary);
+            font-size: 24px;
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 0 1px #EAEAEA;
+        }
+
+        .btn-call-v3:hover {
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .icon-circle-v3 {
+            width: 36px;
+            height: 36px;
+            background-color: var(--color-primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .variants-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="variants-container">
+        <!-- Variant 1 -->
+        <div class="variant-col">
+            <h2 class="variant-title">Вариант 1<br><span
+                    style="font-size:14px;color:#666;font-family:var(--font-primary);">Фирменная красная</span></h2>
+            <div class="v-card">
+                <span class="label">ИЛИ ПОЗВОНИТЕ НАМ НАПРЯМУЮ:</span>
+                <a href="tel:+375293597619" class="btn-call-v1">
+                    <iconify-icon icon="solar:phone-bold" width="24"></iconify-icon>
+                    +375 (29) 359-76-19
+                </a>
+                <p class="hours">Пн–Пт, 9:00–18:00</p>
+            </div>
+        </div>
+
+        <!-- Variant 2 -->
+        <div class="variant-col">
+            <h2 class="variant-title">Вариант 2<br><span
+                    style="font-size:14px;color:#666;font-family:var(--font-primary);">Стильный контур</span></h2>
+            <div class="v-card">
+                <span class="label">ИЛИ ПОЗВОНИТЕ НАМ НАПРЯМУЮ:</span>
+                <a href="tel:+375293597619" class="btn-call-v2">
+                    <iconify-icon icon="solar:phone-bold" width="24"></iconify-icon>
+                    +375 (29) 359-76-19
+                </a>
+                <p class="hours">Пн–Пт, 9:00–18:00</p>
+            </div>
+        </div>
+
+        <!-- Variant 3 -->
+        <div class="variant-col">
+            <h2 class="variant-title">Вариант 3<br><span
+                    style="font-size:14px;color:#666;font-family:var(--font-primary);">Мягкая карточка</span></h2>
+            <div class="v-card">
+                <span class="label">ИЛИ ПОЗВОНИТЕ НАМ НАПРЯМУЮ:</span>
+                <a href="tel:+375293597619" class="btn-call-v3">
+                    <div class="icon-circle-v3">
+                        <iconify-icon icon="solar:phone-bold" width="20"></iconify-icon>
+                    </div>
+                    +375 (29) 359-76-19
+                </a>
+                <p class="hours">Пн–Пт, 9:00–18:00</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

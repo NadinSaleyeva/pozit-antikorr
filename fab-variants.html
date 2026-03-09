@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Плавающие кнопки (Вверх / Звонок)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        body {
+            background: #E5E5E5;
+            padding: 40px;
+            font-family: var(--font-primary);
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .variants-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .variant-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .variant-title {
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        /* Mock mobile screen container */
+        .mock-screen {
+            background: white;
+            border-radius: 20px;
+            height: 500px;
+            /* Simulate some screen height */
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 8px solid #333;
+            overflow: hidden;
+        }
+
+        /* Fake content to show it floats */
+        .fake-content {
+            padding: 20px;
+            color: #ccc;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        /* ========================================= */
+        /* V1: Разделенные круги (Классика) */
+        /* ========================================= */
+        .fab-v1-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .fab-v1-up {
+            width: 40px;
+            height: 40px;
+            background: #F0F0F0;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .fab-v1-up:hover {
+            background: #E0E0E0;
+            transform: translateY(-2px);
+            color: #333;
+        }
+
+        .fab-v1-call {
+            width: 56px;
+            height: 56px;
+            background: var(--color-primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(206, 53, 60, 0.4);
+            transition: all 0.2s;
+        }
+
+        .fab-v1-call:hover {
+            transform: scale(1.05);
+        }
+
+        /* ========================================= */
+        /* V2: Плашка "Звонок" + Маленькая стрелка */
+        /* ========================================= */
+        .fab-v2-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .fab-v2-up {
+            width: 36px;
+            height: 36px;
+            background: white;
+            color: #555;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #EFEFEF;
+            transition: all 0.2s;
+        }
+
+        .fab-v2-up:hover {
+            transform: translateY(-2px);
+        }
+
+        .fab-v2-call {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--color-primary-red);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 8px 20px rgba(206, 53, 60, 0.3);
+            transition: all 0.2s;
+        }
+
+        .fab-v2-call:hover {
+            background: #b02a30;
+        }
+
+
+        /* ========================================= */
+        /* V3: Единая панель (iOS Glassmorphism) */
+        /* ========================================= */
+        .fab-v3-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 5px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .fab-v3-up {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        .fab-v3-up:hover {
+            background: rgba(0, 0, 0, 0.05);
+            color: #000;
+        }
+
+        .fab-v3-call {
+            width: 44px;
+            height: 44px;
+            background: var(--color-primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .fab-v3-call:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 900px) {
+            .variants-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="variants-container">
+
+        <!-- Variant 1 -->
+        <div class="variant-col">
+            <h2 class="variant-title">Вариант 1<br><span style="font-size:13px;color:#888;font-weight:400;">Разделенные
+                    круги (Классика)</span></h2>
+            <div class="mock-screen">
+                <div class="fake-content">Текст страницы...<br><br>Скролл вниз...</div>
+
+                <div class="fab-v1-container">
+                    <!-- Кнопка Вверх (Маленькая, серая) -->
+                    <a href="#" class="fab-v1-up" title="Наверх">
+                        <iconify-icon icon="solar:alt-arrow-up-outline" width="20"></iconify-icon>
+                    </a>
+                    <!-- Кнопка Звонок (Крупная, красная) -->
+                    <a href="tel:+375293597619" class="fab-v1-call" title="Позвонить">
+                        <iconify-icon icon="solar:phone-bold" width="26"></iconify-icon>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Variant 2 -->
+        <div class="variant-col">
+            <h2 class="variant-title">Вариант 2<br><span
+                    style="font-size:13px;color:#888;font-weight:400;">Кнопка-пилюля с текстом</span></h2>
+            <div class="mock-screen">
+                <div class="fake-content">Текст страницы...<br><br>Скролл вниз...</div>
+
+                <div class="fab-v2-container">
+                    <!-- Кнопка Вверх (Маленький квадрат) -->
+                    <a href="#" class="fab-v2-up" title="Наверх">
+                        <iconify-icon icon="solar:alt-arrow-up-outline" width="20"></iconify-icon>
+                    </a>
+                    <!-- Кнопка Звонок (Вытянутая, с текстом) -->
+                    <a href="tel:+375293597619" class="fab-v2-call">
+                        <iconify-icon icon="solar:phone-bold" width="20"></iconify-icon>
+                        ПОЗВОНИТЬ
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Variant 3 -->
+        <div class="variant-col">
+            <h2 class="variant-title">Вариант 3<br><span style="font-size:13px;color:#888;font-weight:400;">Единая
+                    панель (iOS Glass)</span></h2>
+            <div class="mock-screen">
+                <div class="fake-content">Текст страницы...<br><br>Скролл вниз...</div>
+
+                <div class="fab-v3-container">
+                    <!-- Кнопка Вверх (Внутри панели) -->
+                    <a href="#" class="fab-v3-up" title="Наверх">
+                        <iconify-icon icon="solar:alt-arrow-up-outline" width="24"></iconify-icon>
+                    </a>
+                    <!-- Разделитель -->
+                    <div style="width: 1px; height: 24px; background: #EAEAEA;"></div>
+                    <!-- Кнопка Звонок (Красная внутри панели) -->
+                    <a href="tel:+375293597619" class="fab-v3-call" title="Позвонить">
+                        <iconify-icon icon="solar:phone-bold" width="22"></iconify-icon>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

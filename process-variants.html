@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Варианты блока "Инженерия качества"</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        :root {
+            --color-primary-red: #CE353C;
+            --color-bg-light: #F8F9FA;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Oswald', sans-serif;
+        }
+
+        body {
+            background: #E5E5E5;
+            padding: 40px;
+            font-family: var(--font-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 80px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .variant-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .variant-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .variant-label {
+            font-family: var(--font-secondary);
+            font-size: 24px;
+            color: var(--color-primary-red);
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--color-primary-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-secondary);
+            font-size: 42px;
+            color: #222;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+
+        /* ============================================== */
+        /* V1: Горизонтальные карточки (Modern Grid) */
+        /* ============================================== */
+        .v1-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .v1-card {
+            background: var(--color-bg-light);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+            border-bottom: 3px solid transparent;
+        }
+
+        .v1-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            background: white;
+            border-bottom: 3px solid var(--color-primary-red);
+        }
+
+        .v1-icon-wrap {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #888;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .v1-card:hover .v1-icon-wrap {
+            background: var(--color-primary-red);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .v1-step {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: var(--font-secondary);
+            font-size: 20px;
+            color: #DDD;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .v1-card:hover .v1-step {
+            color: var(--color-primary-red);
+        }
+
+        .v1-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+            font-family: var(--font-secondary);
+            text-transform: uppercase;
+        }
+
+        .v1-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ============================================== */
+        /* V2: Вертикальный Таймлайн (Storytelling) */
+        /* ============================================== */
+        .v2-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Central Line */
+        .v2-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: #EAEAEA;
+            transform: translateX(-50%);
+        }
+
+        .v2-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .v2-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .v2-content {
+            width: 45%;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border: 1px solid #F0F0F0;
+        }
+
+        .v2-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--color-primary-red);
+        }
+
+        .v2-dot {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border: 4px solid var(--color-primary-red);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .v2-content:hover~.v2-dot {
+            background: var(--color-primary-red);
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 15px rgba(206, 53, 60, 0.4);
+        }
+
+        .v2-title {
+            font-family: var(--font-secondary);
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            color: #222;
+        }
+
+        .v2-number {
+            font-family: var(--font-secondary);
+            font-size: 60px;
+            font-weight: 800;
+            color: rgba(206, 53, 60, 0.05);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+
+        .v2-content:hover .v2-number {
+            color: rgba(206, 53, 60, 0.15);
+        }
+
+        /* ============================================== */
+        /* V3: Минимализм с крупными цифрами (Typography focus) */
+        /* ============================================== */
+        .v3-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-top: 1px solid #EAEAEA;
+        }
+
+        .v3-item {
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #EAEAEA;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        /* Gradient hover background */
+        .v3-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(206, 53, 60, 0.03) 0%, transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+            z-index: 0;
+        }
+
+        .v3-item:hover::before {
+            transform: translateX(0);
+        }
+
+        .v3-number {
+            font-family: var(--font-secondary);
+            font-size: 80px;
+            font-weight: 900;
+            color: #F0F0F0;
+            line-height: 0.8;
+            margin-right: 40px;
+            transition: color 0.3s, transform 0.3s;
+            z-index: 1;
+            width: 100px;
+            text-align: right;
+        }
+
+        .v3-item:hover .v3-number {
+            color: var(--color-primary-red);
+            transform: scale(1.1);
+        }
+
+        .v3-text {
+            flex: 1;
+            z-index: 1;
+        }
+
+        .v3-title {
+            font-family: var(--font-secondary);
+            font-size: 28px;
+            margin: 0 0 5px 0;
+            color: #222;
+            transition: color 0.3s;
+        }
+
+        .v3-item:hover .v3-title {
+            color: var(--color-primary-red);
+        }
+
+        .v3-desc {
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+
+        .v3-icon {
+            font-size: 40px;
+            color: #DDD;
+            transition: all 0.3s;
+            z-index: 1;
+        }
+
+        .v3-item:hover .v3-icon {
+            color: var(--color-primary-red);
+            transform: translateX(-10px);
+        }
+
+        @media (max-width: 900px) {
+            .v1-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .v2-timeline::before {
+                left: 40px;
+            }
+
+            .v2-item {
+                flex-direction: column !important;
+                align-items: flex-start;
+                padding-left: 80px;
+            }
+
+            .v2-content {
+                width: 100%;
+            }
+
+            .v2-dot {
+                left: 40px;
+            }
+
+            .v2-content:hover~.v2-dot {
+                transform: translateX(-50%) scale(1.3);
+            }
+
+            .v3-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .v3-number {
+                text-align: left;
+                margin: 0;
+                font-size: 60px;
+            }
+
+            .v3-icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .v1-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Variant 1 -->
+    <div class="variant-wrapper">
+        <h2 class="variant-label">Вариант 1: Карточки в ряд (Grid)</h2>
+        <div class="variant-header">
+            <span class="section-subtitle">Процесс</span>
+            <h2 class="section-title">Инженерия качества</h2>
+        </div>
+
+        <div class="v1-grid">
+            <div class="v1-card">
+                <span class="v1-step">01</span>
+                <div class="v1-icon-wrap"><iconify-icon icon="solar:magnifer-bold"></iconify-icon></div>
+                <h3 class="v1-title">Осмотр</h3>
+                <p class="v1-desc">Тщательная дефектовка и оценка повреждений кузова.</p>
+            </div>
+            <div class="v1-card">
+                <span class="v1-step">02</span>
+                <div class="v1-icon-wrap"><iconify-icon icon="solar:document-text-bold"></iconify-icon></div>
+                <h3 class="v1-title">Согласование</h3>
+                <p class="v1-desc">Фиксируем сроки работы и точную финальную стоимость.</p>
+            </div>
+            <div class="v1-card">
+                <span class="v1-step">03</span>
+                <div class="v1-icon-wrap"><iconify-icon icon="solar:settings-bold"></iconify-icon></div>
+                <h3 class="v1-title">Работа</h3>
+                <p class="v1-desc">Подготовка, покраска в камере и последующая полировка.</p>
+            </div>
+            <div class="v1-card">
+                <span class="v1-step">04</span>
+                <div class="v1-icon-wrap"><iconify-icon icon="solar:key-minimalistic-square-bold"></iconify-icon></div>
+                <h3 class="v1-title">Приёмка</h3>
+                <p class="v1-desc">Выдача авто с идеальным блеском и оформление документов.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Variant 2 -->
+    <div class="variant-wrapper">
+        <h2 class="variant-label">Вариант 2: Вертикальная Линия (Timeline)</h2>
+        <div class="variant-header">
+            <span class="section-subtitle">Процесс</span>
+            <h2 class="section-title">Инженерия качества</h2>
+        </div>
+
+        <div class="v2-timeline">
+            <!-- Item 1 -->
+            <div class="v2-item">
+                <div class="v2-content">
+                    <span class="v2-number">01</span>
+                    <h3 class="v2-title">Осмотр</h3>
+                    <p class="v1-desc" style="margin:0;">Тщательная дефектовка и оценка повреждений кузова. Выявляем
+                        скрытые дефекты.</p>
+                </div>
+                <div class="v2-dot"></div>
+            </div>
+            <!-- Item 2 -->
+            <div class="v2-item">
+                <div class="v2-content">
+                    <span class="v2-number">02</span>
+                    <h3 class="v2-title">Согласование</h3>
+                    <p class="v1-desc" style="margin:0;">Фиксируем сроки работы и точную финальную стоимость в
+                        заказ-наряде.</p>
+                </div>
+                <div class="v2-dot"></div>
+            </div>
+            <!-- Item 3 -->
+            <div class="v2-item">
+                <div class="v2-content">
+                    <span class="v2-number">03</span>
+                    <h3 class="v2-title">Работа</h3>
+                    <p class="v1-desc" style="margin:0;">Подготовка, профессиональная покраска в камере и финишная
+                        полировка.</p>
+                </div>
+                <div class="v2-dot"></div>
+            </div>
+            <!-- Item 4 -->
+            <div class="v2-item">
+                <div class="v2-content">
+                    <span class="v2-number">04</span>
+                    <h3 class="v2-title">Приёмка</h3>
+                    <p class="v1-desc" style="margin:0;">Контроль качества, выдача авто клиенту и оформление официальных
+                        документов.</p>
+                </div>
+                <div class="v2-dot"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Variant 3 -->
+    <div class="variant-wrapper">
+        <h2 class="variant-label">Вариант 3: Типографический Лист (Minimalist)</h2>
+        <div class="variant-header">
+            <span class="section-subtitle">Процесс</span>
+            <h2 class="section-title">Инженерия качества</h2>
+        </div>
+
+        <div class="v3-grid">
+            <!-- Item 1 -->
+            <div class="v3-item">
+                <div class="v3-number">1</div>
+                <div class="v3-text">
+                    <h3 class="v3-title">Осмотр</h3>
+                    <p class="v3-desc">Тщательная дефектовка и честная оценка повреждений.</p>
+                </div>
+                <iconify-icon icon="solar:arrow-right-line-duotone" class="v3-icon"></iconify-icon>
+            </div>
+            <!-- Item 2 -->
+            <div class="v3-item">
+                <div class="v3-number">2</div>
+                <div class="v3-text">
+                    <h3 class="v3-title">Согласование</h3>
+                    <p class="v3-desc">Цены и сроки фиксируются до старта и не меняются.</p>
+                </div>
+                <iconify-icon icon="solar:arrow-right-line-duotone" class="v3-icon"></iconify-icon>
+            </div>
+            <!-- Item 3 -->
+            <div class="v3-item">
+                <div class="v3-number">3</div>
+                <div class="v3-text">
+                    <h3 class="v3-title">Работа</h3>
+                    <p class="v3-desc">Высокоточная покраска в профессиональной камере с соблюдением технологий.</p>
+                </div>
+                <iconify-icon icon="solar:arrow-right-line-duotone" class="v3-icon"></iconify-icon>
+            </div>
+            <!-- Item 4 -->
+            <div class="v3-item">
+                <div class="v3-number">4</div>
+                <div class="v3-text">
+                    <h3 class="v3-title">Приёмка</h3>
+                    <p class="v3-desc">Вы забираете сияющий автомобиль с защитой качества.</p>
+                </div>
+                <iconify-icon icon="solar:check-circle-linear" class="v3-icon"></iconify-icon>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

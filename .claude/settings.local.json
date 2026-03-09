@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(identify case2_before.webp case2_after.webp)"
+    ]
+  }
+}
