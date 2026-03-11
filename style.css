@@ -1372,20 +1372,23 @@ main {
 }
 
 .timeline-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    display: flex;
+    justify-content: center;
     margin-bottom: 40px;
 }
 
 .timeline-card {
     background: var(--color-bg);
     border-radius: 16px;
-    padding: 30px;
+    padding: 40px;
     border: 1px solid rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    max-width: 700px;
+    width: 100%;
 }
 
 .timeline-card:hover {
@@ -1418,33 +1421,37 @@ main {
 
 .timeline-card__title {
     font-family: var(--font-secondary);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-text-dark);
     line-height: 1.2;
     letter-spacing: 0.5px;
+    margin-bottom: 4px;
 }
 
 .timeline-card__body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     flex: 1;
+    gap: 8px;
 }
 
 .timeline-card__desc {
     font-size: 14px;
     font-weight: 500;
     color: var(--color-text-muted);
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .timeline-card__time {
     display: flex;
-    align-items: baseline;
-    gap: 8px;
-    margin-top: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    min-width: 140px;
 }
 
 .timeline-card--featured {
