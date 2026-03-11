@@ -2575,8 +2575,8 @@ main {
 }
 
 .compact-logo {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3738,8 +3738,8 @@ main {
     }
 
     .compact-logo {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
         margin: 0;
         padding: 14px;
         flex-shrink: 0;
