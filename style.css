@@ -2828,6 +2828,23 @@ main {
     position: relative;
 }
 
+.guarantee-section .section-title {
+    -webkit-text-stroke: 6px rgba(255, 255, 255, 0.95);
+    paint-order: stroke fill;
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(255, 255, 255, 0.7),
+        0 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.guarantee-section .section-subtitle {
+    -webkit-text-stroke: 3px rgba(255, 255, 255, 0.95);
+    paint-order: stroke fill;
+    text-shadow:
+        0 0 15px rgba(255, 255, 255, 0.9),
+        0 0 30px rgba(255, 255, 255, 0.7);
+}
+
 .guarantee-bg-overlay {
     position: absolute;
     top: 0;
@@ -2897,6 +2914,13 @@ main {
     position: relative;
     font-weight: 500;
     display: flex;
+    -webkit-text-stroke: 6px rgba(255, 255, 255, 0.95);
+    paint-order: stroke fill;
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(255, 255, 255, 0.7),
+        0 2px 8px rgba(255, 255, 255, 0.8);
+}
     align-items: center;
     gap: 12px;
     text-shadow:
