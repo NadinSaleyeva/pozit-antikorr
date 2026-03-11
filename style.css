@@ -1532,9 +1532,7 @@ main {
 }
 
 @media (max-width: 1200px) {
-    .timeline-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* Timeline grid is now flex, no changes needed */
 }
 
 @media (max-width: 768px) {
@@ -1542,17 +1540,21 @@ main {
         padding: 60px 0;
     }
 
-    .timeline-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+    .timeline-card {
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
     }
 
-    .timeline-card {
-        padding: 20px 12px;
+    .timeline-card__time {
+        flex-direction: row;
+        align-items: baseline;
+        min-width: auto;
     }
 
     .time-value {
-        font-size: 32px;
+        font-size: 40px;
     }
 
     .time-unit {
