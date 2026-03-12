@@ -684,10 +684,7 @@ main {
 }
 
 .btn-inspection {
-    display: inline-flex;
-    width: auto;
-    padding: 18px 40px;
-    font-size: 14px;
+    /* Inherits all styles from .btn-shop - no overrides needed */
 }
 
 @media (max-width: 992px) {
