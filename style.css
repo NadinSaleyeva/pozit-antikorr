@@ -641,8 +641,10 @@ main {
     position: relative;
     margin-top: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     overflow: hidden;
 }
 
@@ -677,7 +679,7 @@ main {
     font-size: 18px;
     line-height: 1.8;
     color: var(--color-text-dark);
-    margin-bottom: 30px;
+    margin-bottom: 0;
     font-weight: 500;
 }
 
