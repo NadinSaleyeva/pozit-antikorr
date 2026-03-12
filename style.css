@@ -391,7 +391,7 @@ main {
     min-height: 600px;
     background-image:
         linear-gradient(to right, #ffffff 25%, rgba(255, 255, 255, 0.6) 45%, transparent 70%),
-        url('assets/gallery/112.png');
+        url('assets/gallery/112.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
