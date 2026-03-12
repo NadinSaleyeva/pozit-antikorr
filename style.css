@@ -1033,6 +1033,11 @@ main {
     margin-right: auto;
 }
 
+.price-card--single {
+    grid-column: 1 / -1;
+    max-width: 100%;
+}
+
 .price-card {
     background: var(--color-white);
     border-radius: 16px;
@@ -1109,8 +1114,24 @@ main {
     /* Обеспечивает одинаковую высоту для заголовков в 1 и 2 строки */
 }
 
+.price-card--single .price-card__title {
+    font-size: 20px;
+    text-align: center;
+    min-height: auto;
+}
+
+.price-card--single .price-card__head {
+    justify-content: center;
+}
+
 .price-list {
     list-style: none;
+}
+
+.price-list--two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 30px;
 }
 
 .price-list li {
@@ -1182,6 +1203,10 @@ main {
 
 @media (max-width: 768px) {
     .price-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-list--two-columns {
         grid-template-columns: 1fr;
     }
 
