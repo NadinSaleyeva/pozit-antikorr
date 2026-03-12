@@ -2422,14 +2422,20 @@ main {
     padding: 30px 40px;
     margin: 40px 0 60px;
     display: flex;
-    align-items: center;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
+.brand-badge__header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .brand-badge__logo {
-    width: 140px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     background: white;
     border-radius: 12px;
     display: flex;
@@ -2445,25 +2451,54 @@ main {
     object-fit: contain;
 }
 
-.brand-badge__content {
-    flex: 1;
-}
-
 .brand-badge__title {
     font-family: var(--font-secondary);
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-text-dark);
-    margin-bottom: 8px;
+    margin: 0;
     letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.brand-badge__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .brand-badge__text {
     font-size: 14px;
     color: var(--color-text-muted);
-    margin: 4px 0;
+    margin: 0;
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .brand-badge {
+        padding: 24px 20px;
+    }
+
+    .brand-badge__header {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .brand-badge__logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .brand-badge__title {
+        font-size: 16px;
+    }
+
+    .brand-badge__text {
+        font-size: 13px;
+        text-align: center;
+    }
 }
 
 /* Materials Zone */
