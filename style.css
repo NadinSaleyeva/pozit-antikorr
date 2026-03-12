@@ -188,7 +188,7 @@ img {
     align-items: flex-end;
     gap: 4px;
     flex-shrink: 0;
-    /* min-width removed — was max-content which causes overflow on mobile */
+    /* min-width removed – was max-content which causes overflow on mobile */
 }
 
 .header__schedule {
@@ -4367,7 +4367,7 @@ main {
         font-size: 15px;
     }
 
-    /* FIX: Reviews section — hide nav arrows that clip on small screens */
+    /* FIX: Reviews section – hide nav arrows that clip on small screens */
     .reviews-section {
         padding: 60px 0;
     }
