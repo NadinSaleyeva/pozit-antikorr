@@ -1132,9 +1132,9 @@ main {
 }
 
 .price-list--two-columns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .price-list li {
@@ -1200,6 +1200,99 @@ main {
     font-weight: 500;
 }
 
+/* Material Pricing inside Price Cards */
+.material-pricing {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.material-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.material-name {
+    color: var(--color-text-dark);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.material-name--highlight {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-dark);
+    line-height: 1.3;
+    letter-spacing: 0.8px;
+}
+
+.material-price {
+    color: var(--color-primary-red);
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Material Difference Info */
+.material-difference {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.material-difference__item {
+    text-align: center;
+    flex: 1;
+}
+
+.material-difference__logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+
+.material-difference__icon {
+    margin-bottom: 12px;
+}
+
+.material-difference__title {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.material-difference__desc {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.material-difference__divider {
+    width: 1px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .price-grid {
@@ -1227,6 +1320,17 @@ main {
 
     .car-diagram-wrap {
         display: none;
+    }
+
+    .material-difference {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .material-difference__divider {
+        width: 80px;
+        height: 1px;
     }
 }
 
@@ -1674,6 +1778,20 @@ main {
 
 .section-title span {
     color: var(--color-primary-red);
+}
+
+.section-description {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    margin-top: 20px;
+    margin-bottom: 0;
+    line-height: 1.5;
+    max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .text-red {
@@ -2590,7 +2708,7 @@ main {
 }
 
 .equipment-icon-large {
-    width: 100px;
+    width: 150px;
     height: 100px;
     background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
     border-radius: 16px;
@@ -2667,10 +2785,11 @@ main {
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px auto;
-    background: transparent;
-    border-radius: 0;
+    background: white;
+    border-radius: 16px;
     padding: 0;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .materials-compact-card:hover .compact-logo {
@@ -4282,7 +4401,7 @@ main {
     }
 
     .compact-logo {
-        width: 100px;
+        width: 150px;
         height: 100px;
         margin: 0;
         padding: 0;
