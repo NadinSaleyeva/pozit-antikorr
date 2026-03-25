@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест ЗОНЫ - минимальная плашка</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ТЕСТОВЫЕ СТИЛИ - только для демонстрации */
+        @media (max-width: 480px) {
+            /* Минимальная ширина плашки */
+            .compact-logo {
+                width: 60px !important;   /* было 140px - минимум */
+                height: 80px !important;  /* было 140px - пропорционально */
+            }
+
+            /* Минимальный gap между плашкой и текстом */
+            .materials-compact-card {
+                gap: 8px !important;
+            }
+        }
+
+        .test-label {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #CE353C;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-label">ТЕСТ: плашка 60x80px (было 140x140px)</div>
+
+    <div class="materials-zone">
+        <div class="zone-header">
+            <h3 class="zone-title">ЗОНА 1 - СКРЫТЫЕ ПОЛОСТИ</h3>
+            <p class="zone-subtitle">Двери · Пороги · Стойки · Лонжероны</p>
+        </div>
+
+        <div class="materials-compact-grid">
+            <div class="materials-compact-card">
+                <div class="compact-logo">
+                    <img src="assets/logos/MERCASOL1.webp" alt="Mercasol 1">
+                </div>
+                <div class="card-content">
+                    <h3>MERCASOL 1</h3>
+                    <ul class="compact-features">
+                        <li>Восковой состав для скрытых полостей</li>
+                        <li>Отличная проникающая способность</li>
+                        <li>Эластичная плёнка не трескается</li>
+                        <li>Вытесняет влагу и защищает от коррозии</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="materials-compact-card">
+                <div class="compact-logo">
+                    <img src="assets/logos/MERCASOL2.webp" alt="Mercasol 2">
+                </div>
+                <div class="card-content">
+                    <h3>MERCASOL 2</h3>
+                    <ul class="compact-features">
+                        <li>Глубокое проникновение в швы и стыки</li>
+                        <li>Вытесняет влагу с поверхности металла</li>
+                        <li>Прозрачная сухая плёнка – не пачкает салон</li>
+                        <li>Работает на уже начавшей ржаветь поверхности</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="materials-compact-card">
+                <div class="compact-logo">
+                    <img src="assets/logos/NOXUDOL750.webp" alt="Noxudol 750">
+                </div>
+                <div class="card-content">
+                    <h3>NOXUDOL 750</h3>
+                    <ul class="compact-features">
+                        <li>Низкая вязкость - заполняет самые узкие полости</li>
+                        <li>Восковая плёнка держится весь срок защиты</li>
+                        <li>Нагнетание под давлением – не из баллончика</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.materials-compact-card').forEach(card => {
+            card.style.border = '2px solid #CE353C';
+        });
+    </script>
+</body>
+</html>
