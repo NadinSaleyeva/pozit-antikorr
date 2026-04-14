@@ -981,6 +981,38 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper fade-up">
+                <h3 class="contact-form__title">ОСТАВИТЬ ЗАЯВКУ</h3>
+                <p class="contact-form__desc">Заполните форму и мы свяжемся с вами в течение 30 минут</p>
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="contact-form__fields">
+                        <div class="contact-form__group">
+                            <input type="text" name="name" id="formName" class="contact-form__input" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <input type="tel" name="phone" id="formPhone" class="contact-form__input" placeholder="+375 (__) ___-__-__" required>
+                        </div>
+                        <div class="contact-form__group contact-form__group--full">
+                            <textarea name="message" id="formMessage" class="contact-form__input contact-form__textarea" placeholder="Опишите проблему или задачу" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="contact-form__consent">
+                        <label class="contact-form__checkbox-label">
+                            <input type="checkbox" name="consent" id="formConsent" required>
+                            <span class="contact-form__checkmark"></span>
+                            <span class="contact-form__consent-text">Я согласен на <a href="#" id="privacyPolicyLink" class="contact-form__link">обработку персональных данных</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="contact-form__submit" id="formSubmitBtn">ОТПРАВИТЬ ЗАЯВКУ</button>
+                </form>
+                <div class="contact-form__success" id="formSuccess" style="display: none;">
+                    <iconify-icon icon="ph:check-circle-fill" width="48" style="color: #4CAF50;"></iconify-icon>
+                    <p>Заявка отправлена! Мы свяжемся с вами в ближайшее время.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1063,6 +1095,49 @@
                 <span>Пн-Пт: 9:00 - 18:00</span>
             </div>
         </a>
+    </div>
+
+    <!-- === PRIVACY POLICY MODAL === -->
+    <div class="modal-overlay" id="privacyModal" style="display:none;">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2 class="modal-title">Политика конфиденциальности</h2>
+            <div class="modal-body">
+                <p><strong>ООО «Позит»</strong> (УНП 100142944) обеспечивает защиту персональных данных пользователей сайта pozit.by.</p>
+
+                <h4>1. Какие данные мы собираем</h4>
+                <p>Имя, номер телефона, текст сообщения — только то, что вы указали в форме обратной связи.</p>
+
+                <h4>2. Цели обработки</h4>
+                <p>Обработка заявок, обратная связь, расчёт стоимости ремонта. Мы не передаём ваши данные третьим лицам без вашего согласия.</p>
+
+                <h4>3. Cookies</h4>
+                <p>Сайт использует cookies для корректной работы и улучшения пользовательского опыта. Cookies не содержат персональных данных и используются для запоминания ваших предпочтений (например, согласие на использование cookie).</p>
+
+                <h4>4. Хранение данных</h4>
+                <p>Данные хранятся на защищённых серверах и удаляются по вашему запросу. Срок хранения — не более 1 года с момента последнего обращения.</p>
+
+                <h4>5. Ваши права</h4>
+                <p>Вы можете запросить удаление или изменение своих данных, связавшись с нами по телефону <a href="tel:+375296877878">+375 (29) 687-78-78</a>.</p>
+
+                <h4>6. Контакты</h4>
+                <p>ООО «Позит», г. Минск, ул. Кедышко д.24 каб.8<br>Тел.: +375 (29) 687-78-78</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- === COOKIE CONSENT BANNER === -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner__content">
+            <p class="cookie-banner__text">
+                Мы используем cookies для улучшения работы сайта.
+                <a href="#" class="cookie-banner__link" id="cookiePolicyLink">Политика конфиденциальности</a>
+            </p>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__accept" id="cookieAccept">Принять</button>
+                <button class="cookie-banner__decline" id="cookieDecline">Отклонить</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>

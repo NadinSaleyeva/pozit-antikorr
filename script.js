@@ -303,6 +303,150 @@ document.addEventListener('DOMContentLoaded', () => {
         updateReviews();
     }
 
+    // === CONTACT FORM ===
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    if (contactForm) {
+        const formName = document.getElementById('formName');
+        const formPhone = document.getElementById('formPhone');
+        const formConsent = document.getElementById('formConsent');
+        const submitBtn = document.getElementById('formSubmitBtn');
+
+        // Phone mask: +375 (__) ___-__-__
+        if (formPhone) {
+            formPhone.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 12) value = value.slice(0, 12);
+
+                let formatted = '';
+                if (value.length > 0) formatted = '+' + value.slice(0, 3);
+                if (value.length > 3) formatted += ' (' + value.slice(3, 5);
+                if (value.length > 5) formatted += ') ' + value.slice(5, 8);
+                if (value.length > 8) formatted += '-' + value.slice(8, 10);
+                if (value.length > 10) formatted += '-' + value.slice(10, 12);
+
+                e.target.value = formatted;
+            });
+
+            formPhone.addEventListener('focus', () => {
+                if (!formPhone.value) formPhone.value = '+375';
+            });
+        }
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            // Validate name
+            if (!formName.value.trim()) {
+                formName.classList.add('error');
+                isValid = false;
+            } else {
+                formName.classList.remove('error');
+            }
+
+            // Validate phone (at least 11 digits)
+            const phoneDigits = formPhone.value.replace(/\D/g, '');
+            if (phoneDigits.length < 11) {
+                formPhone.classList.add('error');
+                isValid = false;
+            } else {
+                formPhone.classList.remove('error');
+            }
+
+            // Validate consent
+            const checkmark = formConsent.closest('.contact-form__checkbox-label').querySelector('.contact-form__checkmark');
+            if (!formConsent.checked) {
+                checkmark.classList.add('error');
+                isValid = false;
+            } else {
+                checkmark.classList.remove('error');
+            }
+
+            if (!isValid) return;
+
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'ОТПРАВКА...';
+
+            // Simulate form submission (replace with real endpoint)
+            setTimeout(() => {
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+            }, 1000);
+        });
+
+        // Remove error on input
+        [formName, formPhone].forEach(input => {
+            input.addEventListener('input', () => input.classList.remove('error'));
+        });
+
+        formConsent.addEventListener('change', () => {
+            const checkmark = formConsent.closest('.contact-form__checkbox-label').querySelector('.contact-form__checkmark');
+            checkmark.classList.remove('error');
+        });
+    }
+
+    // === PRIVACY POLICY MODAL ===
+    const privacyModal = document.getElementById('privacyModal');
+    const privacyLink = document.getElementById('privacyPolicyLink');
+    const cookiePolicyLink = document.getElementById('cookiePolicyLink');
+    const modalClose = document.getElementById('modalClose');
+
+    const openModal = (e) => {
+        e.preventDefault();
+        if (privacyModal) {
+            privacyModal.style.display = 'flex';
+            privacyModal.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        if (privacyModal) {
+            privacyModal.classList.remove('active');
+            privacyModal.style.display = 'none';
+        }
+        document.body.style.overflow = '';
+    };
+
+    if (privacyLink) privacyLink.addEventListener('click', openModal);
+    if (cookiePolicyLink) cookiePolicyLink.addEventListener('click', openModal);
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (privacyModal) {
+        privacyModal.addEventListener('click', (e) => {
+            if (e.target === privacyModal) closeModal();
+        });
+    }
+
+    // === COOKIE CONSENT BANNER ===
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieDecline = document.getElementById('cookieDecline');
+
+    if (cookieBanner) {
+        const cookieChoice = localStorage.getItem('cookie_consent_antikorr');
+
+        if (!cookieChoice) {
+            cookieBanner.classList.add('active');
+        }
+
+        if (cookieAccept) {
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookie_consent_antikorr', 'accepted');
+                cookieBanner.classList.remove('active');
+            });
+        }
+
+        if (cookieDecline) {
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('cookie_consent_antikorr', 'declined');
+                cookieBanner.classList.remove('active');
+            });
+        }
+    }
+
     // === FAQ ACCORDION ===
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
