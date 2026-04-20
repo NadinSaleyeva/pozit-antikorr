@@ -5200,6 +5200,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
     color: white;
     z-index: 9999;
     padding: 20px 0;
+    border-radius: 8px 8px 0 0;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
 }
 
