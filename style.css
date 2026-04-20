@@ -4316,7 +4316,18 @@ main {
     align-items: flex-end;
     z-index: 1000;
     pointer-events: none;
+    transition: bottom 0.3s ease;
     /* Let clicks pass through container */
+}
+
+body:has(.cookie-banner.active) .fab-v2-container {
+    bottom: 120px;
+}
+
+@media (max-width: 768px) {
+    body:has(.cookie-banner.active) .fab-v2-container {
+        bottom: 200px;
+    }
 }
 
 .fab-v2-up {
