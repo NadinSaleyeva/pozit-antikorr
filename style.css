@@ -5194,7 +5194,9 @@ body:has(.cookie-banner.active) .fab-v2-container {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #1A1A1A;
+    background: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: white;
     z-index: 9999;
     padding: 20px 0;
