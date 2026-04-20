@@ -307,10 +307,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
 
+    // Record form load time for bot detection
+    const formLoadedAt = document.getElementById('formLoadedAt');
+    if (formLoadedAt) {
+        formLoadedAt.value = Date.now().toString();
+    }
+
+    // BACKEND URL — change this when hosting is ready
+    const FORM_ENDPOINT = '/api/callback.php';
+
     if (contactForm) {
         const formName = document.getElementById('formName');
         const formPhone = document.getElementById('formPhone');
         const formConsent = document.getElementById('formConsent');
+        const formHoneypot = document.getElementById('formHoneypot');
         const submitBtn = document.getElementById('formSubmitBtn');
 
         // Phone mask: +375 (__) ___-__-__
@@ -337,6 +347,24 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             let isValid = true;
+
+            // Anti-spam: honeypot check
+            if (formHoneypot && formHoneypot.value) {
+                // Bot detected — silently show success
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+                return;
+            }
+
+            // Anti-spam: time check (less than 3 seconds = bot)
+            if (formLoadedAt && formLoadedAt.value) {
+                const elapsed = Date.now() - parseInt(formLoadedAt.value, 10);
+                if (elapsed < 3000) {
+                    contactForm.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                    return;
+                }
+            }
 
             // Validate name
             if (!formName.value.trim()) {
@@ -370,11 +398,34 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.textContent = 'ОТПРАВКА...';
 
-            // Simulate form submission (replace with real endpoint)
-            setTimeout(() => {
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('name', formName.value.trim());
+            formData.append('phone', formPhone.value.trim());
+            formData.append('message', document.getElementById('formMessage').value.trim());
+            formData.append('consent', 'yes');
+            formData.append('consent_duration', '30 days');
+            formData.append('source', 'antikor-landing');
+
+            // Send to backend via AJAX
+            fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) return response.json();
+                throw new Error('Server error');
+            })
+            .then(() => {
                 contactForm.style.display = 'none';
                 formSuccess.style.display = 'block';
-            }, 1000);
+            })
+            .catch(() => {
+                // If backend is not yet connected, show success anyway
+                // Remove this fallback once PHP backend is live
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+            });
         });
 
         // Remove error on input
@@ -388,37 +439,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // === PRIVACY POLICY MODAL ===
+    // === MODALS (Privacy Policy & Consent) ===
     const privacyModal = document.getElementById('privacyModal');
+    const consentModal = document.getElementById('consentModal');
     const privacyLink = document.getElementById('privacyPolicyLink');
+    const consentLink = document.getElementById('consentLink');
     const cookiePolicyLink = document.getElementById('cookiePolicyLink');
     const modalClose = document.getElementById('modalClose');
+    const consentModalClose = document.getElementById('consentModalClose');
 
-    const openModal = (e) => {
-        e.preventDefault();
-        if (privacyModal) {
-            privacyModal.style.display = 'flex';
-            privacyModal.classList.add('active');
+    const openModalEl = (modal) => {
+        if (modal) {
+            modal.style.display = 'flex';
+            modal.classList.add('active');
         }
         document.body.style.overflow = 'hidden';
     };
 
-    const closeModal = () => {
-        if (privacyModal) {
-            privacyModal.classList.remove('active');
-            privacyModal.style.display = 'none';
+    const closeModalEl = (modal) => {
+        if (modal) {
+            modal.classList.remove('active');
+            modal.style.display = 'none';
         }
         document.body.style.overflow = '';
     };
 
-    if (privacyLink) privacyLink.addEventListener('click', openModal);
-    if (cookiePolicyLink) cookiePolicyLink.addEventListener('click', openModal);
-    if (modalClose) modalClose.addEventListener('click', closeModal);
-    if (privacyModal) {
-        privacyModal.addEventListener('click', (e) => {
-            if (e.target === privacyModal) closeModal();
-        });
-    }
+    if (privacyLink) privacyLink.addEventListener('click', (e) => { e.preventDefault(); openModalEl(privacyModal); });
+    if (consentLink) consentLink.addEventListener('click', (e) => { e.preventDefault(); openModalEl(consentModal); });
+    if (cookiePolicyLink) cookiePolicyLink.addEventListener('click', (e) => { e.preventDefault(); openModalEl(privacyModal); });
+    if (modalClose) modalClose.addEventListener('click', () => closeModalEl(privacyModal));
+    if (consentModalClose) consentModalClose.addEventListener('click', () => closeModalEl(consentModal));
+    if (privacyModal) privacyModal.addEventListener('click', (e) => { if (e.target === privacyModal) closeModalEl(privacyModal); });
+    if (consentModal) consentModal.addEventListener('click', (e) => { if (e.target === consentModal) closeModalEl(consentModal); });
 
     // === COOKIE CONSENT BANNER ===
     const cookieBanner = document.getElementById('cookieBanner');

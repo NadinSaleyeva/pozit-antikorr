@@ -176,6 +176,31 @@
                 </div>
             </section>
 
+            <!-- === VIDEO SECTION === -->
+            <section id="video-process" class="video-section">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Видео из бокса</p>
+                        <h2 class="section-title">КАК <span>/</span> НАНОСИМ ПОКРЫТИЕ</h2>
+                        <p class="section-description">Посмотрите как выглядит процесс антикоррозийной обработки</p>
+                    </div>
+
+                    <div class="video-grid fade-up">
+                        <div class="video-card">
+                            <div class="video-wrapper video-wrapper--vertical">
+                                <video
+                                    playsinline
+                                    preload="none"
+                                    poster="assets/video/how-poster.webp"
+                                    controls>
+                                    <source src="assets/video/how.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- === BENEFITS SECTION === -->
             <section id="benefits" class="benefits">
                 <div class="container">
@@ -349,6 +374,45 @@
                             <path d="M12 8v4l3 3" />
                         </svg>
                         <p>Указано среднее время. Точный срок – после осмотра.</p>
+                    </div>
+
+                    <div class="timeline-video fade-up">
+                        <div class="video-wrapper video-wrapper--horizontal">
+                            <video
+                                playsinline
+                                preload="none"
+                                poster="assets/video/all-video-poster.webp"
+                                controls>
+                                <source src="assets/video/all-video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <p class="video-card__label">Полный процесс обработки</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === PREPARATION SECTION === -->
+            <section id="preparation" class="preparation-section">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Этап перед обработкой</p>
+                        <h2 class="section-title">ПОДГОТОВКА <span>/</span> КУЗОВА</h2>
+                        <p class="section-description">Защищаем всё, что не обрабатывается: кузов, колёса, тормоза и элементы подвески</p>
+                    </div>
+
+                    <div class="preparation-grid fade-up">
+                        <figure class="preparation-card">
+                            <img src="assets/gallery/prep-1.webp" alt="Кузов в защитной плёнке перед обработкой" loading="lazy">
+                            <figcaption>Укрытие кузова плёнкой</figcaption>
+                        </figure>
+                        <figure class="preparation-card">
+                            <img src="assets/gallery/prep-2.webp" alt="Маскировка колёсных арок" loading="lazy">
+                            <figcaption>Маскировка арок и порогов</figcaption>
+                        </figure>
+                        <figure class="preparation-card">
+                            <img src="assets/gallery/prep-3.webp" alt="Защита колёс и тормозных дисков" loading="lazy">
+                            <figcaption>Защита колёс и тормозных дисков</figcaption>
+                        </figure>
                     </div>
                 </div>
             </section>
@@ -563,11 +627,11 @@
                             <!-- Case 1 -->
                             <div class="comparison-card" data-case="1">
                                 <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt1.webp" alt="Антикор до" draggable="false"
+                                    <img src="assets/gallery/case1-after.webp" alt="Днище после обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt2-1.webp" alt="Антикор после" draggable="false"
+                                    <img src="assets/gallery/case1-before.webp" alt="Днище до обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-slider" style="left: 50%;">
@@ -583,11 +647,11 @@
                             <!-- Case 2 -->
                             <div class="comparison-card" data-case="2">
                                 <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt3-1.webp" alt="Обработка до" draggable="false"
+                                    <img src="assets/gallery/case2-after.webp" alt="Центральный тоннель после обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt3-4.webp" alt="Обработка после" draggable="false"
+                                    <img src="assets/gallery/case2-before.webp" alt="Центральный тоннель до обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-slider" style="left: 50%;">
@@ -603,11 +667,11 @@
                             <!-- Case 3 -->
                             <div class="comparison-card" data-case="3">
                                 <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt5-1.webp" alt="Днище до" draggable="false"
+                                    <img src="assets/gallery/case3-after.webp" alt="Колёсная арка после обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt5-2.webp" alt="Днище после" draggable="false"
+                                    <img src="assets/gallery/case3-before.webp" alt="Колёсная арка до обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-slider" style="left: 50%;">
@@ -623,51 +687,11 @@
                             <!-- Case 4 -->
                             <div class="comparison-card" data-case="4">
                                 <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt6-1.webp" alt="Арки до" draggable="false"
+                                    <img src="assets/gallery/case4-after.webp" alt="Порог после обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt6-2.webp" alt="Арки после" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-slider" style="left: 50%;">
-                                    <div class="slider-handle">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                                            stroke-width="2">
-                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Case 5 -->
-                            <div class="comparison-card" data-case="5">
-                                <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt9-1.webp" alt="Пороги до" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt9-2.webp" alt="Пороги после" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-slider" style="left: 50%;">
-                                    <div class="slider-handle">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                                            stroke-width="2">
-                                            <path d="M7 12l-5 0m0 0l3-3m-3 3l3 3M17 12l5 0m0 0l-3-3m3 3l-3 3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Case 6 -->
-                            <div class="comparison-card" data-case="6">
-                                <div class="comparison-img after">
-                                    <img src="assets/gallery/prompt10-1.webp" alt="Полости до" draggable="false"
-                                        loading="lazy">
-                                </div>
-                                <div class="comparison-img before" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="assets/gallery/prompt10-2.webp" alt="Полости после" draggable="false"
+                                    <img src="assets/gallery/case4-before.webp" alt="Порог до обработки" draggable="false"
                                         loading="lazy">
                                 </div>
                                 <div class="comparison-slider" style="left: 50%;">
@@ -692,8 +716,6 @@
                         </button>
                         <div class="dots-indicator">
                             <div class="dot active"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
                             <div class="dot"></div>
                             <div class="dot"></div>
                             <div class="dot"></div>
@@ -987,6 +1009,11 @@
                 <h3 class="contact-form__title">ОСТАВИТЬ ЗАЯВКУ</h3>
                 <p class="contact-form__desc">Заполните форму и мы свяжемся с вами в течение 30 минут</p>
                 <form class="contact-form" id="contactForm" novalidate>
+                    <input type="hidden" name="form_loaded_at" id="formLoadedAt" value="">
+                    <!-- Honeypot field — hidden from real users, bots will fill it -->
+                    <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                        <input type="text" name="website" id="formHoneypot" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="contact-form__fields">
                         <div class="contact-form__group">
                             <input type="text" name="name" id="formName" class="contact-form__input" placeholder="Ваше имя" required>
@@ -1002,7 +1029,7 @@
                         <label class="contact-form__checkbox-label">
                             <input type="checkbox" name="consent" id="formConsent" required>
                             <span class="contact-form__checkmark"></span>
-                            <span class="contact-form__consent-text">Я согласен на <a href="#" id="privacyPolicyLink" class="contact-form__link">обработку персональных данных</a></span>
+                            <span class="contact-form__consent-text">Я ознакомлен(-а) с <a href="#" id="privacyPolicyLink" class="contact-form__link">Политикой обработки персональных данных</a> и даю <a href="#" id="consentLink" class="contact-form__link">согласие на обработку</a> моих персональных данных в целях организации обратного звонка. Срок действия согласия — 30 дней.</span>
                         </label>
                     </div>
                     <button type="submit" class="contact-form__submit" id="formSubmitBtn">ОТПРАВИТЬ ЗАЯВКУ</button>
@@ -1101,27 +1128,92 @@
     <div class="modal-overlay" id="privacyModal" style="display:none;">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
-            <h2 class="modal-title">Политика конфиденциальности</h2>
+            <h2 class="modal-title">Политика обработки персональных данных</h2>
             <div class="modal-body">
-                <p><strong>ООО «Позит»</strong> (УНП 100142944) обеспечивает защиту персональных данных пользователей сайта pozit.by.</p>
+                <p>Настоящая Политика разработана в соответствии с Законом Республики Беларусь от 7 мая 2021 г. № 99-З «О защите персональных данных» (с изменениями от 16.03.2026 № 134-З).</p>
 
-                <h4>1. Какие данные мы собираем</h4>
-                <p>Имя, номер телефона, текст сообщения — только то, что вы указали в форме обратной связи.</p>
+                <h4>1. Оператор</h4>
+                <p><strong>ООО «Позит»</strong>, УНП 100142944<br>
+                Юридический адрес: г. Минск, ул. Кедышко д.24 каб.8<br>
+                Адрес мастерской: г. Минск, ул. Олешева 137А<br>
+                Тел.: <a href="tel:+375296877878">+375 (29) 687-78-78</a></p>
 
-                <h4>2. Цели обработки</h4>
-                <p>Обработка заявок, обратная связь, расчёт стоимости ремонта. Мы не передаём ваши данные третьим лицам без вашего согласия.</p>
+                <h4>2. Какие данные мы собираем</h4>
+                <p>Через форму обратной связи на сайте мы собираем:</p>
+                <ul>
+                    <li>Имя</li>
+                    <li>Номер телефона</li>
+                    <li>Текст сообщения (при заполнении)</li>
+                </ul>
 
-                <h4>3. Cookies</h4>
-                <p>Сайт использует cookies для корректной работы и улучшения пользовательского опыта. Cookies не содержат персональных данных и используются для запоминания ваших предпочтений (например, согласие на использование cookie).</p>
+                <h4>3. Цели обработки</h4>
+                <p>Персональные данные обрабатываются исключительно в целях:</p>
+                <ul>
+                    <li>Организации обратного звонка и связи с вами</li>
+                    <li>Расчёта стоимости услуг</li>
+                    <li>Обработки вашей заявки на антикоррозийную обработку</li>
+                </ul>
 
-                <h4>4. Хранение данных</h4>
-                <p>Данные хранятся на защищённых серверах и удаляются по вашему запросу. Срок хранения — не более 1 года с момента последнего обращения.</p>
+                <h4>4. Срок хранения данных</h4>
+                <p>Персональные данные хранятся в течение <strong>30 дней</strong> с момента отправки заявки. По истечении указанного срока данные удаляются. Данные хранятся на защищённом сервере на территории Республики Беларусь.</p>
 
-                <h4>5. Ваши права</h4>
-                <p>Вы можете запросить удаление или изменение своих данных, связавшись с нами по телефону <a href="tel:+375296877878">+375 (29) 687-78-78</a>.</p>
+                <h4>5. Передача данных третьим лицам</h4>
+                <p>Мы не передаём ваши персональные данные третьим лицам без вашего согласия. Для оперативной обработки заявки уведомления могут передаваться через мессенджер Telegram и электронную почту. Основное хранилище данных находится на сервере в Республике Беларусь.</p>
 
-                <h4>6. Контакты</h4>
-                <p>ООО «Позит», г. Минск, ул. Кедышко д.24 каб.8<br>Тел.: +375 (29) 687-78-78</p>
+                <h4>6. Cookies</h4>
+                <p>Сайт использует cookies для корректной работы и запоминания ваших предпочтений (например, согласие на использование cookie). Cookies не содержат персональных данных.</p>
+
+                <h4>7. Ваши права</h4>
+                <p>В соответствии с законодательством Республики Беларусь вы имеете право:</p>
+                <ul>
+                    <li>Получить информацию об обработке своих персональных данных</li>
+                    <li>Требовать изменения, удаления или прекращения обработки своих данных</li>
+                    <li>Отозвать согласие на обработку персональных данных</li>
+                    <li>Обжаловать действия оператора в Национальный центр защиты персональных данных</li>
+                </ul>
+                <p>Для реализации своих прав свяжитесь с нами по телефону <a href="tel:+375296877878">+375 (29) 687-78-78</a> или напишите в мессенджер.</p>
+
+                <h4>8. Порядок уведомления о нарушениях</h4>
+                <p>В случае нарушения безопасности персональных данных оператор уведомляет Национальный центр защиты персональных данных и субъекта данных в порядке, установленном законодательством.</p>
+
+                <h4>9. Контакты ответственного лица</h4>
+                <p>ООО «Позит», г. Минск, ул. Кедышко д.24 каб.8<br>
+                Тел.: <a href="tel:+375296877878">+375 (29) 687-78-78</a></p>
+
+                <p style="margin-top: 20px; font-size: 12px; color: #999;">Дата последнего обновления: апрель 2026 г.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- === CONSENT MODAL === -->
+    <div class="modal-overlay" id="consentModal" style="display:none;">
+        <div class="modal-content">
+            <button class="modal-close" id="consentModalClose">&times;</button>
+            <h2 class="modal-title">Согласие на обработку персональных данных</h2>
+            <div class="modal-body">
+                <p>Отправляя заявку через форму на сайте pozit.by, вы даёте согласие ООО «Позит» (УНП 100142944) на обработку ваших персональных данных на следующих условиях:</p>
+
+                <h4>Цель обработки</h4>
+                <p>Организация обратного звонка, расчёт стоимости услуг и обработка заявки на антикоррозийную обработку автомобиля.</p>
+
+                <h4>Перечень данных</h4>
+                <p>Имя, номер телефона, текст сообщения.</p>
+
+                <h4>Срок действия согласия</h4>
+                <p><strong>30 дней</strong> с момента отправки заявки. По истечении срока данные удаляются.</p>
+
+                <h4>Передача данных</h4>
+                <p>Для оперативной обработки заявки уведомления могут передаваться через мессенджер Telegram и электронную почту. Основное хранилище данных — на сервере в Республике Беларусь.</p>
+
+                <h4>Ваши права</h4>
+                <ul>
+                    <li>Вы можете отозвать согласие в любой момент, позвонив по телефону <a href="tel:+375296877878">+375 (29) 687-78-78</a></li>
+                    <li>Вы можете запросить информацию о своих данных или потребовать их удаление</li>
+                </ul>
+
+                <h4>Последствия</h4>
+                <p><strong>При даче согласия:</strong> ваши данные будут обработаны для организации обратного звонка и расчёта стоимости.</p>
+                <p><strong>При отказе:</strong> заявка не будет отправлена, и мы не сможем с вами связаться. Вы можете позвонить нам напрямую по телефону <a href="tel:+375296877878">+375 (29) 687-78-78</a>.</p>
             </div>
         </div>
     </div>
