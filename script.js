@@ -649,6 +649,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (i !== idx) {
                     const v = slide.querySelector('video');
                     if (v && !v.paused) v.pause();
+                    const yt = slide.querySelector('iframe[data-youtube-id]');
+                    if (yt && yt.contentWindow) {
+                        yt.contentWindow.postMessage(
+                            '{"event":"command","func":"pauseVideo","args":""}',
+                            '*'
+                        );
+                    }
                 }
             });
         };
