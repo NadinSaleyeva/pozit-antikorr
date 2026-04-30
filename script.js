@@ -402,6 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('consent', 'yes');
             formData.append('consent_duration', '30 days');
             formData.append('source', 'antikor-landing');
+            formData.append('hp', formHoneypot ? formHoneypot.value : '');
+            formData.append('loaded_at', formLoadedAt ? formLoadedAt.value : '');
 
             // Send to backend via AJAX
             fetch(FORM_ENDPOINT, {
@@ -460,9 +462,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     };
 
-    if (privacyLink) privacyLink.addEventListener('click', (e) => { e.preventDefault(); openModalEl(privacyModal); });
-    if (consentLink) consentLink.addEventListener('click', (e) => { e.preventDefault(); openModalEl(consentModal); });
-    if (cookiePolicyLink) cookiePolicyLink.addEventListener('click', (e) => { e.preventDefault(); openModalEl(privacyModal); });
+    // Links now point to standalone pages (privacy-policy.html, consent.html, cookie-policy.html)
+    // and open in a new tab via target="_blank" — no modal override needed.
     if (modalClose) modalClose.addEventListener('click', () => closeModalEl(privacyModal));
     if (consentModalClose) consentModalClose.addEventListener('click', () => closeModalEl(consentModal));
     if (privacyModal) privacyModal.addEventListener('click', (e) => { if (e.target === privacyModal) closeModalEl(privacyModal); });
@@ -493,6 +494,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 cookieBanner.classList.remove('active');
             });
         }
+    }
+
+    // «Настройки cookie» в футере — повторно показывает баннер
+    const footerCookieSettings = document.getElementById('footerCookieSettings');
+    if (footerCookieSettings && cookieBanner) {
+        footerCookieSettings.addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('cookie_consent_antikorr');
+            cookieBanner.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 
     // === FAQ ACCORDION ===

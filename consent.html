@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Согласие на обработку персональных данных — ООО «Позит»</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #eef0f2;
+            color: #1a1a1a;
+            font-size: 14px;
+            line-height: 1.75;
+            padding: 32px 16px 60px;
+        }
+
+        .doc {
+            background: #fff;
+            max-width: 820px;
+            margin: 0 auto;
+            border-top: 4px solid #D03137;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+        }
+
+        .doc-header {
+            padding: 32px 48px 24px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .doc-org {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+
+        .doc-org-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .doc-org-details {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.6;
+            text-align: right;
+        }
+
+        .doc-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .doc-version-row {
+            display: flex;
+            gap: 24px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .doc-version-row span { display: flex; align-items: center; gap: 6px; }
+        .doc-version-row span::before { content: ''; display: inline-block; width: 4px; height: 4px; background: #D03137; border-radius: 50%; }
+
+        .draft-notice {
+            margin: 0 48px;
+            padding: 10px 16px;
+            background: #fff8e1;
+            border-left: 3px solid #f59e0b;
+            font-size: 12px;
+            color: #92400e;
+            margin-top: 20px;
+        }
+
+        .doc-body {
+            padding: 32px 48px 48px;
+        }
+
+        .doc-intro {
+            background: #f8f8f8;
+            border: 1px solid #e8e8e8;
+            padding: 16px 20px;
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        h2 {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 32px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        h2:first-of-type { margin-top: 0; }
+
+        h2 .num {
+            display: inline-block;
+            background: #D03137;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 3px;
+            margin-right: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        p { margin-bottom: 10px; color: #333; font-size: 14px; }
+        p:last-child { margin-bottom: 0; }
+
+        ul, ol { padding-left: 20px; margin-bottom: 12px; }
+        li { margin-bottom: 5px; color: #333; font-size: 14px; }
+
+        a { color: #D03137; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .placeholder {
+            background: #fff3cd;
+            border: 1px dashed #ffc107;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            color: #856404;
+            font-weight: 600;
+        }
+
+        .info-block {
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            border-left: 3px solid #D03137;
+            padding: 14px 18px;
+            margin: 12px 0 16px;
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        .info-block p { font-size: 13px; margin-bottom: 6px; }
+        .info-block p:last-child { margin-bottom: 0; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 16px;
+            font-size: 13px;
+        }
+
+        th {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 9px 12px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #444;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 9px 12px;
+            color: #333;
+            vertical-align: top;
+            line-height: 1.55;
+        }
+
+        tr:nth-child(even) td { background: #fafafa; }
+
+        .outcome-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 12px 0 16px;
+        }
+
+        .outcome-box {
+            border: 1px solid #e0e0e0;
+            padding: 14px 16px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .outcome-box__label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .outcome-box--yes .outcome-box__label { color: #166534; border-color: #bbf7d0; }
+        .outcome-box--no .outcome-box__label { color: #991b1b; border-color: #fecaca; }
+
+        .doc-footer {
+            border-top: 1px solid #e0e0e0;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #D03137;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+
+        .back-link::before { content: '← '; }
+        .back-link:hover { text-decoration: underline; }
+
+        .doc-footer-note {
+            font-size: 11px;
+            color: #999;
+            text-align: right;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 0 0 40px; }
+            .doc { box-shadow: none; }
+            .doc-header, .doc-body, .doc-footer { padding-left: 20px; padding-right: 20px; }
+            .draft-notice { margin-left: 20px; margin-right: 20px; }
+            .doc-org { flex-direction: column; gap: 8px; }
+            .doc-org-details { text-align: left; }
+            .doc-version-row { flex-direction: column; gap: 4px; }
+            .outcome-grid { grid-template-columns: 1fr; }
+            table { font-size: 12px; }
+            th, td { padding: 7px 8px; }
+        }
+    </style>
+</head>
+<body>
+<div class="doc">
+
+    <div class="doc-header">
+        <div class="doc-org">
+            <div>
+                <div class="doc-org-name">ООО «Позит»</div>
+            </div>
+            <div class="doc-org-details">
+                УНП 100142944<br>
+                г. Минск, ул. Кедышко д.24, каб.8<br>
+                pozit.by
+            </div>
+        </div>
+        <div class="doc-title">Согласие на обработку<br>персональных данных</div>
+        <div class="doc-version-row">
+            <span>Версия 1.0</span>
+            <span>Апрель 2026 г.</span>
+            <span>Ст. 5 Закона РБ № 99-З от 07.05.2021</span>
+        </div>
+    </div>
+
+    <div class="draft-notice">
+        ⚠ Черновик — подлежит согласованию с юристом перед публикацией. Поля <span class="placeholder">[ УКАЗАТЬ ]</span> заполняет заказчик.
+    </div>
+
+    <div class="doc-body">
+
+        <div class="doc-intro">
+            Настоящий документ содержит условия, на которых ООО «Позит» обрабатывает персональные данные субъекта, отправившего заявку через форму обратной связи на сайте <strong>pozit.by</strong>.<br><br>
+            Проставляя отметку в поле «Я даю согласие на обработку персональных данных» и нажимая кнопку «Отправить заявку», субъект выражает информированное, конкретное и свободное согласие на условиях, изложенных ниже.
+        </div>
+
+        <h2><span class="num">1</span>Оператор персональных данных</h2>
+
+        <div class="info-block">
+            <p><strong>Наименование:</strong> Общество с ограниченной ответственностью «Позит»</p>
+            <p><strong>УНП:</strong> 100142944</p>
+            <p><strong>Юридический адрес:</strong> г. Минск, ул. Кедышко д.24, каб.8</p>
+            <p><strong>Телефон:</strong> <a href="tel:+375296877878">+375 (29) 687-78-78</a></p>
+            <p><strong>Контакт ответственного:</strong> <span class="placeholder">[ УКАЗАТЬ e-mail, например privacy@pozit.by ]</span></p>
+        </div>
+
+        <h2><span class="num">2</span>Перечень персональных данных</h2>
+
+        <ul>
+            <li>Имя (фамилия, имя — по желанию субъекта)</li>
+            <li>Номер телефона</li>
+            <li>Адрес электронной почты (если указан субъектом)</li>
+            <li>Текст сообщения (если заполнен субъектом)</li>
+        </ul>
+
+        <h2><span class="num">3</span>Цель обработки</h2>
+
+        <p>Организация обратного звонка, расчёт стоимости услуг и обработка заявки на антикоррозийную обработку автомобиля.</p>
+
+        <h2><span class="num">4</span>Перечень действий с персональными данными</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Действие</th>
+                    <th>Описание</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Сбор</strong></td>
+                    <td>Получение данных через форму обратной связи на сайте pozit.by</td>
+                </tr>
+                <tr>
+                    <td><strong>Хранение</strong></td>
+                    <td>Сохранение в базе данных на защищённом сервере в Республике Беларусь в течение 30 дней</td>
+                </tr>
+                <tr>
+                    <td><strong>Использование</strong></td>
+                    <td>Обращение к данным с целью связи с заявителем и обработки заявки</td>
+                </tr>
+                <tr>
+                    <td><strong>Передача</strong></td>
+                    <td>Направление оповещения менеджеру через Telegram и e-mail в маскированном виде (только последние 2 цифры телефона открыты). Данные остаются в РБ</td>
+                </tr>
+                <tr>
+                    <td><strong>Удаление</strong></td>
+                    <td>Физическое уничтожение данных по истечении 30 дней без возможности восстановления</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2><span class="num">5</span>Уполномоченные лица</h2>
+
+        <p>Обработку данных осуществляет непосредственно ООО «Позит». Уполномоченные лица, которым поручена обработка: <span class="placeholder">[ УКАЗАТЬ, если применимо, например: сотрудники, ответственные за обработку входящих заявок ]</span>.</p>
+
+        <h2><span class="num">6</span>Срок действия согласия</h2>
+
+        <p><strong>30 (тридцать) календарных дней</strong> с момента отправки заявки через форму на сайте pozit.by.</p>
+        <p>По истечении срока персональные данные уничтожаются физически (безвозвратное удаление из базы данных). Лог факта получения согласия хранится отдельно в течение 3 лет.</p>
+
+        <h2><span class="num">7</span>Последствия дачи и отказа от согласия</h2>
+
+        <div class="outcome-grid">
+            <div class="outcome-box outcome-box--yes">
+                <div class="outcome-box__label">✓ При даче согласия</div>
+                Ваши данные будут обработаны для организации обратного звонка, расчёта стоимости и записи на антикоррозийную обработку автомобиля.
+            </div>
+            <div class="outcome-box outcome-box--no">
+                <div class="outcome-box__label">✗ При отказе от согласия</div>
+                Заявка через форму на сайте не будет отправлена. Вы можете обратиться напрямую: <a href="tel:+375296877878">+375 (29) 687-78-78</a> или в мессенджер (Telegram, WhatsApp, Viber).
+            </div>
+        </div>
+
+        <h2><span class="num">8</span>Права субъекта и порядок отзыва согласия</h2>
+
+        <p>Вы вправе в любое время отозвать настоящее согласие. После отзыва обработка данных прекращается, данные удаляются досрочно в течение <strong>15 рабочих дней</strong>.</p>
+
+        <p>Способы отзыва:</p>
+        <div class="info-block">
+            <p><strong>Онлайн-форма:</strong> <a href="withdraw-consent.html">pozit.by/withdraw-consent</a></p>
+            <p><strong>E-mail:</strong> <span class="placeholder">[ УКАЗАТЬ, например privacy@pozit.by ]</span></p>
+            <p><strong>Телефон:</strong> <a href="tel:+375296877878">+375 (29) 687-78-78</a></p>
+        </div>
+
+        <p>Также вы вправе обратиться в Национальный центр защиты персональных данных Республики Беларусь: <a href="https://cpd.by" target="_blank" rel="noopener">cpd.by</a>.</p>
+
+    </div>
+
+    <div class="doc-footer">
+        <a href="https://antikor.pozit.by/" class="back-link">На главную</a>
+        <div class="doc-footer-note">
+            Версия 1.0 · Апрель 2026 г. · ООО «Позит»
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

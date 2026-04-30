@@ -2222,9 +2222,29 @@ main {
     color: var(--color-text-dark);
 }
 
+.footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer__legal-link {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer__legal-link:hover {
+    color: var(--color-primary-red);
+}
+
 /* === CONTACTS SECTION === */
 .contacts {
-    padding: 100px 0;
+    padding: 100px 0 80px;
     background-color: var(--color-bg);
     position: relative;
     overflow: hidden;
@@ -2359,6 +2379,11 @@ main {
     font-weight: 700;
 }
 
+.payment-standalone {
+    padding: 0 0 60px;
+    background: var(--color-bg);
+}
+
 /* Payment Methods in CTA Block */
 .payment-methods-wrapper {
     display: flex;
@@ -2439,6 +2464,87 @@ main {
 
 .payment-item:hover::after {
     width: 100%;
+}
+
+/* ==========================================
+   TRUST STATS
+   ========================================== */
+
+.trust-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 960px;
+    margin: 56px auto 0;
+}
+
+.trust-stats__item {
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trust-stats__item::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--color-primary-red);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.trust-stats__item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.trust-stats__item:hover::after {
+    transform: scaleX(1);
+}
+
+.trust-stats__number {
+    font-family: var(--font-secondary);
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--color-primary-red);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.trust-stats__label {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+    .trust-stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .trust-stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .trust-stats__number {
+        font-size: 28px;
+    }
+
+    .trust-stats__item {
+        padding: 24px 16px;
+    }
 }
 
 /* Map Section */
@@ -4416,6 +4522,7 @@ main {
         align-items: center;
         text-align: center;
         gap: 40px;
+        padding-bottom: 90px;
     }
 
     .footer__left,
@@ -4427,6 +4534,11 @@ main {
 
     .footer__right {
         text-align: center;
+    }
+
+    .footer__legal {
+        text-align: left;
+        justify-content: flex-start;
     }
 
     .section-title {
@@ -5205,10 +5317,10 @@ body:has(.cookie-banner.active) .fab-v2-container {
     padding: 16px 32px;
     background: var(--color-primary-red);
     color: white;
-    font-family: var(--font-secondary);
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     border: none !important;
     border-radius: 10px;
@@ -5378,33 +5490,36 @@ body:has(.cookie-banner.active) .fab-v2-container {
     padding: 10px 24px;
     background: var(--color-primary-red);
     color: white;
-    border: none !important;
+    border: 1px solid var(--color-primary-red) !important;
     border-radius: 8px;
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, border-color 0.2s;
 }
 
 .cookie-banner__accept:hover {
     background: #B82E34;
+    border-color: #B82E34 !important;
 }
 
 .cookie-banner__decline {
     padding: 10px 24px;
-    background: transparent;
+    background: #2a2a2a;
     color: #CCC;
     border: 1px solid #555 !important;
     border-radius: 8px;
     font-family: var(--font-primary);
     font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
 .cookie-banner__decline:hover {
-    border-color: #999 !important;
+    background: #333;
+    border-color: #888 !important;
     color: white;
 }
 
@@ -6172,5 +6287,277 @@ body:has(.cookie-banner.active) .fab-v2-container {
     }
     .combo-contact__form-title {
         font-size: 20px;
+    }
+}
+
+/* ==========================================
+   CONTACT BLOCK: 2 cards top + 1 card full width
+   ========================================== */
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-card {
+    padding: 32px 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.contact-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--color-primary-red);
+    transition: width 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    border-color: rgba(206, 53, 60, 0.08);
+}
+
+.contact-card:hover::after {
+    width: 100%;
+}
+
+/* Form card: full width, red border only */
+.contact-card--form {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 48px;
+    background: #fff;
+    border: 1.5px solid rgba(206, 53, 60, 0.45);
+    box-shadow: none;
+}
+
+.contact-card--form:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(206, 53, 60, 0.45);
+}
+
+.contact-card--form::after {
+    display: none;
+}
+
+.contact-card__call-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    gap: 6px;
+}
+
+.contact-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card__icon {
+    color: var(--color-primary-red);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-card__title {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+}
+
+.contact-card__title iconify-icon {
+    color: var(--color-primary-red);
+}
+
+.contact-card__phone {
+    font-family: var(--font-secondary);
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-primary-red);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: opacity 0.2s;
+    margin-bottom: 2px;
+}
+
+.contact-card__phone:hover { opacity: 0.8; }
+
+.contact-card__hint {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Round messenger icons */
+.contact-card__round-icons {
+    display: flex;
+    gap: 14px;
+    margin-top: 14px;
+    justify-content: center;
+}
+
+.round-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.round-icon:hover {
+    transform: translateY(-3px);
+    background: #e4e4e4;
+}
+
+/* Messenger brand colors */
+.round-icon--telegram { background: rgba(42, 171, 238, 0.12); border-color: rgba(42, 171, 238, 0.35); }
+.round-icon--telegram:hover { background: rgba(42, 171, 238, 0.22); }
+.round-icon--whatsapp { background: rgba(37, 211, 102, 0.12); border-color: rgba(37, 211, 102, 0.35); }
+.round-icon--whatsapp:hover { background: rgba(37, 211, 102, 0.22); }
+.round-icon--viber { background: rgba(115, 96, 242, 0.12); border-color: rgba(115, 96, 242, 0.35); }
+.round-icon--viber:hover { background: rgba(115, 96, 242, 0.22); }
+
+/* Call row: title + phone pill in one line */
+.contact-card__call-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+}
+
+.contact-card__call-row .contact-card__title,
+.contact-card__msg-row .contact-card__title {
+    margin-bottom: 0;
+}
+
+.contact-card__phone--pill {
+    font-size: 15px;
+}
+
+/* Msg row: title + messenger icons in one line */
+.contact-card__msg-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+}
+
+.contact-card__round-icons--inline {
+    margin-top: 0;
+    justify-content: flex-start;
+}
+
+.contact-card__round-icons--inline .round-icon {
+    width: 34px;
+    height: 34px;
+}
+
+
+.contact-card__form-title {
+    font-family: var(--font-secondary);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-primary-red);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+}
+
+.contact-card__form-subtitle {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.7;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.contact-card--form .contact-form {
+    width: 100%;
+    text-align: left;
+}
+
+/* Two inputs side by side */
+.contact-form__two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.contact-card--form .contact-form__group {
+    margin-bottom: 10px;
+}
+
+.contact-card--form .contact-form__textarea { resize: none; }
+
+/* Centered submit button */
+.contact-form__submit-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.contact-card--form .contact-form__submit {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 8px;
+    margin: 0;
+}
+
+/* Compact consent */
+.contact-form__consent--compact {
+    margin: 10px 0 12px;
+}
+
+.contact-form__consent--compact .contact-form__consent-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+}
+
+/* Responsive: tablet and below */
+@media (max-width: 860px) {
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card--form {
+        grid-column: 1;
+        padding: 32px 20px;
+    }
+
+    .contact-form__two-col {
+        grid-template-columns: 1fr;
     }
 }

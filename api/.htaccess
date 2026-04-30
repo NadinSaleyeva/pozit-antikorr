@@ -1,0 +1,8 @@
+# Запрет прямого доступа к config.php
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Запрет листинга директории
+Options -Indexes
