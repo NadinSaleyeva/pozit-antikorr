@@ -8,3 +8,10 @@ PHOTO/
 /products/
 data/applications.csv
 data/consent_log.csv
+data/
+ftp.txt
+metrika.txt
+api/config.php
+_backup_*/
+google*.html
+yandex_*.html

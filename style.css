@@ -214,6 +214,7 @@ img {
     letter-spacing: 0.8px;
     transition: color 0.2s ease;
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
 }
 
 .header__phone:hover {
@@ -385,8 +386,7 @@ main {
 .hero {
     position: relative;
     padding-top: 150px;
-    /* Slightly raised from 180px */
-    padding-bottom: 80px;
+    padding-bottom: 100px;
     overflow: hidden;
     min-height: 600px;
     background-image:
@@ -556,7 +556,7 @@ main {
 
 /* === NEED CHECK SECTION === */
 .need-check-section {
-    padding: 80px 0;
+    padding: 100px 0;
     background: #FAFAFA;
     position: relative;
     z-index: 5;
@@ -712,7 +712,7 @@ main {
 /* === BENEFITS SECTION === */
 /* === VIDEO SECTION === */
 .video-section {
-    padding: 40px 0 80px;
+    padding: 100px 0;
     background: var(--color-bg);
     position: relative;
     z-index: 5;
@@ -791,7 +791,7 @@ main {
 
 @media (max-width: 576px) {
     .video-section {
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
     .video-wrapper--vertical {
@@ -804,12 +804,10 @@ main {
 }
 
 .benefits {
-    padding: 60px 0;
+    padding: 100px 0;
     background: var(--color-white);
     position: relative;
     z-index: 5;
-    margin-top: -30px;
-    /* Slight overlap with hero for better flow */
     width: 100%;
     overflow: hidden;
 }
@@ -913,8 +911,7 @@ main {
 
 @media (max-width: 768px) {
     .benefits {
-        padding: 40px 0;
-        margin-top: 0;
+        padding: 60px 0;
     }
 
     .benefits__grid {
@@ -2244,7 +2241,7 @@ main {
 
 /* === CONTACTS SECTION === */
 .contacts {
-    padding: 100px 0 80px;
+    padding: 100px 0;
     background-color: var(--color-bg);
     position: relative;
     overflow: hidden;
@@ -2499,10 +2496,11 @@ main {
 
 .trust-stats__number {
     font-family: var(--font-secondary);
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 700;
+    text-transform: uppercase;
     color: #555;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     line-height: 1;
     margin-bottom: 10px;
 }
@@ -2533,7 +2531,7 @@ main {
     }
 
     .trust-stats__number {
-        font-size: 22px;
+        font-size: 17px;
     }
 
     .trust-stats__item {
@@ -2763,7 +2761,7 @@ main {
 /* Process Section (Variant 3)               */
 /* ========================================= */
 .process-section {
-    padding: 80px 0 60px 0;
+    padding: 100px 0;
     background: var(--color-bg);
     width: 100%;
     overflow: hidden;
@@ -4809,7 +4807,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: Process section padding */
     .process-section {
-        padding: 40px 0 30px 0;
+        padding: 60px 0;
     }
 
     /* FIX: Materials section padding */
@@ -4965,7 +4963,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: Contacts section */
     .contacts {
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
     .contacts__background-text {
@@ -5078,7 +5076,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: Before/after gallery padding adjustment */
     .before-after {
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
     .comparison-card {
@@ -5242,6 +5240,103 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
 .contact-form__input.error {
     border-color: var(--color-primary-red);
+}
+
+.phone-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #D0D0D0;
+    border-radius: 10px;
+    background: #FAFAFA;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: text;
+}
+
+.phone-field:focus-within {
+    border-color: #999 !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+.phone-field.error {
+    border-color: var(--color-primary-red) !important;
+    box-shadow: 0 0 0 3px rgba(206, 53, 60, 0.1) !important;
+}
+
+.phone-field__prefix {
+    padding: 16px 6px 16px 18px;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    color: #555;
+    white-space: nowrap;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+
+.phone-field__number {
+    flex: 1;
+    padding: 16px 18px 16px 8px;
+    border: none;
+    background: transparent;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    color: var(--color-text-dark);
+    outline: none;
+    min-width: 0;
+}
+
+.phone-field__number::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.phone-field__error {
+    display: none;
+    color: var(--color-primary-red);
+    font-size: 12px;
+    margin-top: 5px;
+    padding-left: 2px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%       { transform: translateX(-7px); }
+    40%       { transform: translateX(7px); }
+    60%       { transform: translateX(-4px); }
+    80%       { transform: translateX(4px); }
+}
+
+.contact-form__submit.shake {
+    animation: shake 0.4s ease;
+}
+
+.form-error-msg {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: #FFF5F5;
+    border: 1px solid rgba(206, 53, 60, 0.2);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-text-dark);
+}
+
+.form-error-msg iconify-icon {
+    color: var(--color-primary-red);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.form-error-msg a {
+    color: var(--color-primary-red);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .contact-form__consent {
@@ -6403,6 +6498,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
     letter-spacing: 0.01em;
     transition: opacity 0.2s;
     margin-bottom: 2px;
+    white-space: nowrap;
 }
 
 .contact-card__phone:hover { opacity: 0.8; }

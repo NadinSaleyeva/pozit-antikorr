@@ -33,10 +33,34 @@
         rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=22">
+    <link rel="stylesheet" href="style.css?v=23">
 
     <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RKCELH0NC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8RKCELH0NC');
+      gtag('config', 'AW-18051828112');
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108994402', 'ym');
+
+        ym(108994402, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/108994402" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -1203,7 +1227,14 @@
                                 <input type="text" name="name" id="formName" class="contact-form__input" placeholder="Ваше имя" required>
                             </div>
                             <div class="contact-form__group">
-                                <input type="tel" name="phone" id="formPhone" class="contact-form__input" placeholder="+375 (__) ___-__-__" required>
+                                <div class="phone-field" id="phoneField">
+                                    <span class="phone-field__prefix">+375</span>
+                                    <input type="text" class="phone-field__number" id="phoneNumber"
+                                           placeholder="(__) ___-__-__" maxlength="14" inputmode="numeric"
+                                           autocomplete="off" aria-label="Номер телефона">
+                                </div>
+                                <span class="phone-field__error" id="phoneError">Введите корректный номер телефона</span>
+                                <input type="hidden" name="phone" id="formPhone">
                             </div>
                         </div>
                         <div class="contact-form__group">
@@ -1211,10 +1242,14 @@
                         </div>
                         <div class="contact-form__consent">
                             <label class="contact-form__checkbox-label">
-                                <input type="checkbox" name="consent" id="formConsent" required>
+                                <input type="checkbox" name="consent" id="formConsent">
                                 <span class="contact-form__checkmark"></span>
                                 <span class="contact-form__consent-text">Я ознакомлен(-а) с <a href="privacy-policy.html" id="privacyPolicyLink" class="contact-form__link" target="_blank">Политикой обработки персональных данных</a> и даю <a href="consent.html" id="consentLink" class="contact-form__link" target="_blank">согласие на обработку</a> моих персональных данных в целях организации обратного звонка. Срок действия согласия — 30 дней.</span>
                             </label>
+                        </div>
+                        <div class="form-error-msg" id="formErrorMsg" style="display:none;">
+                            <iconify-icon icon="ph:warning-circle" width="20"></iconify-icon>
+                            <span id="formErrorText"></span>
                         </div>
                         <div class="contact-form__submit-wrap">
                             <button type="submit" class="contact-form__submit" id="formSubmitBtn">ОТПРАВИТЬ ЗАЯВКУ</button>
@@ -1235,16 +1270,16 @@
                     <div class="trust-stats__label">На рынке Беларуси</div>
                 </div>
                 <div class="trust-stats__item">
-                    <div class="trust-stats__number">5 000+</div>
-                    <div class="trust-stats__label">Обработанных автомобилей</div>
+                    <div class="trust-stats__number">до 3 лет</div>
+                    <div class="trust-stats__label">Гарантия на работы</div>
                 </div>
                 <div class="trust-stats__item">
                     <div class="trust-stats__number">Видеоотчёт</div>
                     <div class="trust-stats__label">Каждого этапа работы</div>
                 </div>
                 <div class="trust-stats__item">
-                    <div class="trust-stats__number">4,0 ★</div>
-                    <div class="trust-stats__label">Рейтинг на Яндекс.Картах<br><span class="trust-stats__sublabel">96 оценок</span></div>
+                    <div class="trust-stats__number">4,4 ★</div>
+                    <div class="trust-stats__label">Рейтинг компании Позит<br><span class="trust-stats__sublabel">114 отзывов на Яндекс.Картах</span></div>
                 </div>
             </div>
 
@@ -1493,7 +1528,42 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
+
+    <!-- Google Ads conversion tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Клик по телефону — конверсия "Звонок с сайта"
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'conversion', {'send_to': 'AW-18051828112/tiErCNmlvJQcEJCT5J9D'});
+        });
+      });
+
+      // Клик по Telegram — конверсия "Клик Telegram"
+      document.querySelectorAll('a[href*="t.me"], a[href*="telegram"], a[href*="tg://"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'conversion', {'send_to': 'AW-18051828112/Rd5-CMGkvpQcEJCT5J9D'});
+        });
+      });
+
+      // Клик по WhatsApp — тот же label что Telegram
+      document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'conversion', {'send_to': 'AW-18051828112/Rd5-CMGkvpQcEJCT5J9D'});
+        });
+      });
+
+      // Клик по Viber — конверсия "Клик Viber"
+      document.querySelectorAll('a[href*="viber"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'conversion', {'send_to': 'AW-18051828112/aacdCMSkvpQcEJCT5J9D'});
+        });
+      });
+
+    });
+    </script>
 </body>
 
 </html>

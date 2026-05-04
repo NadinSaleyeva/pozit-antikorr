@@ -319,140 +319,165 @@ document.addEventListener('DOMContentLoaded', () => {
         const formHoneypot = document.getElementById('formHoneypot');
         const submitBtn = document.getElementById('formSubmitBtn');
 
-        // Phone mask: +375 (__) ___-__-__
-        if (formPhone) {
-            formPhone.addEventListener('input', (e) => {
-                let value = e.target.value.replace(/\D/g, '');
-                if (value.length > 12) value = value.slice(0, 12);
+        // Phone field: +375 (XX) XXX-XX-XX
+        const phoneField  = document.getElementById('phoneField');
+        const phoneNumber = document.getElementById('phoneNumber');
+        const phoneError  = document.getElementById('phoneError');
 
-                let formatted = '';
-                if (value.length > 0) formatted = '+' + value.slice(0, 3);
-                if (value.length > 3) formatted += ' (' + value.slice(3, 5);
-                if (value.length > 5) formatted += ') ' + value.slice(5, 8);
-                if (value.length > 8) formatted += '-' + value.slice(8, 10);
-                if (value.length > 10) formatted += '-' + value.slice(10, 12);
+        const applyPhoneMask = (digits) => {
+            if (!digits.length) return '';
+            let fmt = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 5);
+            if (digits.length >= 5) fmt += '-' + digits.slice(5, 7);
+            if (digits.length >= 7) fmt += '-' + digits.slice(7, 9);
+            return fmt;
+        };
 
-                e.target.value = formatted;
+        const syncHiddenPhone = () => {
+            if (!formPhone || !phoneNumber) return;
+            const digits = phoneNumber.value.replace(/\D/g, '');
+            formPhone.value = digits.length ? '+375 ' + applyPhoneMask(digits) : '';
+        };
+
+        const showPhoneError = () => {
+            if (phoneField) phoneField.classList.add('error');
+            if (phoneError) phoneError.style.display = 'block';
+        };
+
+        const clearPhoneError = () => {
+            if (phoneField) phoneField.classList.remove('error');
+            if (phoneError) phoneError.style.display = 'none';
+        };
+
+        if (phoneNumber) {
+            // Clear error state immediately and after autofill
+            clearPhoneError();
+            setTimeout(() => {
+                if (phoneNumber.value) {
+                    const digits = phoneNumber.value.replace(/\D/g, '').slice(0, 9);
+                    phoneNumber.value = digits.length ? applyPhoneMask(digits) : '';
+                }
+                clearPhoneError();
+            }, 300);
+
+            phoneNumber.addEventListener('input', (e) => {
+                const digits = e.target.value.replace(/\D/g, '').slice(0, 9);
+                e.target.value = applyPhoneMask(digits);
+                syncHiddenPhone();
+                clearPhoneError();
             });
 
-            formPhone.addEventListener('focus', () => {
-                if (!formPhone.value) formPhone.value = '+375';
+            phoneNumber.addEventListener('keydown', (e) => {
+                if (e.key !== 'Backspace') return;
+                e.preventDefault();
+                const digits = phoneNumber.value.replace(/\D/g, '');
+                phoneNumber.value = applyPhoneMask(digits.slice(0, -1));
+                syncHiddenPhone();
+                clearPhoneError();
+            });
+
+            phoneNumber.addEventListener('blur', () => {
+                const digits = phoneNumber.value.replace(/\D/g, '');
+                if (digits.length > 0 && digits.length < 9) showPhoneError();
             });
         }
 
+        const formErrorMsg  = document.getElementById('formErrorMsg');
+        const formErrorText = document.getElementById('formErrorText');
+
+        const showSuccess = () => {
+            contactForm.style.display = 'none';
+            formSuccess.style.display = 'block';
+        };
+
+        const resetBtn = () => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
+        };
+
+        const shakeBtn = () => {
+            submitBtn.classList.remove('shake');
+            void submitBtn.offsetWidth;
+            submitBtn.classList.add('shake');
+            submitBtn.addEventListener('animationend', () => submitBtn.classList.remove('shake'), { once: true });
+        };
+
+        const showFormError = (html) => {
+            formErrorText.innerHTML = html;
+            formErrorMsg.style.display = 'flex';
+            formErrorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        };
+
+        const hideFormError = () => {
+            formErrorMsg.style.display = 'none';
+        };
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            let isValid = true;
+            hideFormError();
 
-            // Anti-spam: honeypot check
-            if (formHoneypot && formHoneypot.value) {
-                // Bot detected — silently show success
-                contactForm.style.display = 'none';
-                formSuccess.style.display = 'block';
-                return;
-            }
+            // Anti-spam: honeypot
+            if (formHoneypot && formHoneypot.value) { showSuccess(); return; }
 
-            // Anti-spam: time check (less than 3 seconds = bot)
+            // Anti-spam: time check
             if (formLoadedAt && formLoadedAt.value) {
                 const elapsed = Date.now() - parseInt(formLoadedAt.value, 10);
-                if (elapsed < 3000) {
-                    contactForm.style.display = 'none';
-                    formSuccess.style.display = 'block';
-                    return;
-                }
+                if (elapsed < 3000) { showSuccess(); return; }
             }
 
-            // Validate name
-            if (!formName.value.trim()) {
-                formName.classList.add('error');
-                isValid = false;
-            } else {
-                formName.classList.remove('error');
+            // Validate phone only
+            const phoneDigits = phoneNumber ? phoneNumber.value.replace(/\D/g, '') : '';
+            if (phoneDigits.length < 9) {
+                showPhoneError();
+                shakeBtn();
+                return;
             }
+            clearPhoneError();
 
-            // Validate phone (at least 11 digits)
-            const phoneDigits = formPhone.value.replace(/\D/g, '');
-            if (phoneDigits.length < 11) {
-                formPhone.classList.add('error');
-                isValid = false;
-            } else {
-                formPhone.classList.remove('error');
-            }
-
-            // Validate consent
-            const checkmark = formConsent.closest('.contact-form__checkbox-label').querySelector('.contact-form__checkmark');
-            if (!formConsent.checked) {
-                checkmark.classList.add('error');
-                isValid = false;
-            } else {
-                checkmark.classList.remove('error');
-            }
-
-            if (!isValid) return;
-
-            // Disable button
             submitBtn.disabled = true;
             submitBtn.textContent = 'ОТПРАВКА...';
 
-            // Prepare form data
             const formData = new FormData();
             formData.append('name', formName.value.trim());
             formData.append('phone', formPhone.value.trim());
             formData.append('message', document.getElementById('formMessage').value.trim());
-            formData.append('consent', 'yes');
+            formData.append('consent', formConsent.checked ? 'yes' : 'no');
             formData.append('consent_duration', '30 days');
             formData.append('source', 'antikor-landing');
             formData.append('hp', formHoneypot ? formHoneypot.value : '');
             formData.append('loaded_at', formLoadedAt ? formLoadedAt.value : '');
 
-            // Send to backend via AJAX
-            fetch(FORM_ENDPOINT, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) return response.json();
-                throw new Error('Server error');
-            })
-            .then(() => {
-                contactForm.style.display = 'none';
-                formSuccess.style.display = 'block';
-            })
-            .catch(() => {
-                // If backend is not yet connected, show success anyway
-                // Remove this fallback once PHP backend is live
-                contactForm.style.display = 'none';
-                formSuccess.style.display = 'block';
-            });
-        });
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-        // Remove error on input
-        [formName, formPhone].forEach(input => {
-            input.addEventListener('input', () => input.classList.remove('error'));
-        });
-
-        formConsent.addEventListener('change', () => {
-            const checkmark = formConsent.closest('.contact-form__checkbox-label').querySelector('.contact-form__checkmark');
-            checkmark.classList.remove('error');
+            fetch(FORM_ENDPOINT, { method: 'POST', body: formData, signal: controller.signal })
+                .then(response => {
+                    clearTimeout(timeoutId);
+                    if (response.ok) return response.json();
+                    throw new Error('server');
+                })
+                .then(data => {
+                    if (data && data.status === 'error') throw new Error('server');
+                    showSuccess();
+                })
+                .catch(err => {
+                    clearTimeout(timeoutId);
+                    resetBtn();
+                    if (err.name === 'AbortError') {
+                        showFormError('Превышено время ожидания. Пожалуйста, позвоните нам напрямую: <a href="tel:+375296877878">+375 (29) 687-78-78</a>');
+                    } else if (!navigator.onLine) {
+                        showFormError('Нет подключения к интернету. Позвоните нам: <a href="tel:+375296877878">+375 (29) 687-78-78</a>');
+                    } else {
+                        showFormError('Не удалось отправить заявку. Позвоните нам: <a href="tel:+375296877878">+375 (29) 687-78-78</a>');
+                    }
+                });
         });
     }
 
     // === MODALS (Privacy Policy & Consent) ===
     const privacyModal = document.getElementById('privacyModal');
     const consentModal = document.getElementById('consentModal');
-    const privacyLink = document.getElementById('privacyPolicyLink');
-    const consentLink = document.getElementById('consentLink');
-    const cookiePolicyLink = document.getElementById('cookiePolicyLink');
     const modalClose = document.getElementById('modalClose');
     const consentModalClose = document.getElementById('consentModalClose');
-
-    const openModalEl = (modal) => {
-        if (modal) {
-            modal.style.display = 'flex';
-            modal.classList.add('active');
-        }
-        document.body.style.overflow = 'hidden';
-    };
 
     const closeModalEl = (modal) => {
         if (modal) {
