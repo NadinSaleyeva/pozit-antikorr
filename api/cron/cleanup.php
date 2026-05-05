@@ -3,7 +3,7 @@
 //  POZIT — Ручная/cron-очистка CSV (необязательно)
 //  callback.php уже чистит автоматически при каждой заявке.
 //  Этот скрипт — для запуска вручную или раз в сутки через cron:
-//  0 3 * * * php /home/.../cron/cleanup.php >> /home/.../logs/cleanup.log 2>&1
+//  0 3 * * * php /home/.../api/cron/cleanup.php >> /home/.../logs/cleanup.log 2>&1
 // ============================================================
 
 declare(strict_types=1);
@@ -13,8 +13,8 @@ if (PHP_SAPI !== 'cli') {
     exit('Forbidden');
 }
 
-require_once __DIR__ . '/../api/config.php';
-require_once __DIR__ . '/../api/callback.php'; // подключаем cleanupCsv()
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../callback.php'; // подключаем cleanupCsv()
 
 $now = date('Y-m-d H:i:s');
 echo "[{$now}] Запуск очистки\n";
