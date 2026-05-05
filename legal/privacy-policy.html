@@ -74,16 +74,6 @@
         .doc-version-row span { display: flex; align-items: center; gap: 6px; }
         .doc-version-row span::before { content: ''; display: inline-block; width: 4px; height: 4px; background: #D03137; border-radius: 50%; }
 
-        .draft-notice {
-            margin: 0 48px;
-            padding: 10px 16px;
-            background: #fff8e1;
-            border-left: 3px solid #f59e0b;
-            font-size: 12px;
-            color: #92400e;
-            margin-top: 20px;
-        }
-
         .doc-body {
             padding: 32px 48px 48px;
         }
@@ -131,16 +121,6 @@
 
         a { color: #D03137; text-decoration: none; }
         a:hover { text-decoration: underline; }
-
-        .placeholder {
-            background: #fff3cd;
-            border: 1px dashed #ffc107;
-            padding: 1px 6px;
-            border-radius: 3px;
-            font-size: 12px;
-            color: #856404;
-            font-weight: 600;
-        }
 
         table {
             width: 100%;
@@ -215,7 +195,6 @@
             body { padding: 0 0 40px; }
             .doc { box-shadow: none; }
             .doc-header, .doc-body, .doc-footer { padding-left: 20px; padding-right: 20px; }
-            .draft-notice { margin-left: 20px; margin-right: 20px; }
             .doc-org { flex-direction: column; gap: 8px; }
             .doc-org-details { text-align: left; }
             .doc-version-row { flex-direction: column; gap: 4px; }
@@ -246,10 +225,6 @@
         </div>
     </div>
 
-    <div class="draft-notice">
-        ⚠ Черновик — подлежит согласованию с юристом перед публикацией. Поля <span class="placeholder">[ УКАЗАТЬ ]</span> заполняет заказчик.
-    </div>
-
     <div class="doc-body">
 
         <div class="doc-intro">
@@ -266,12 +241,8 @@
             <p><strong>Телефон:</strong> <a href="tel:+375296877878">+375 (29) 687-78-78</a></p>
         </div>
 
-        <p><strong>Ответственный за внутренний контроль обработки персональных данных:</strong></p>
-        <div class="info-block">
-            <p><strong>ФИО:</strong> <span class="placeholder">[ УКАЗАТЬ ]</span></p>
-            <p><strong>E-mail:</strong> <span class="placeholder">[ УКАЗАТЬ, например privacy@pozit.by ]</span></p>
-            <p><strong>Телефон:</strong> <a href="tel:+375296877878">+375 (29) 687-78-78</a></p>
-        </div>
+        <p><strong>Контактный e-mail:</strong> <a href="mailto:info@pozit.by">info@pozit.by</a><br>
+        <strong>Телефон:</strong> <a href="tel:+375296877878">+375 (29) 687-78-78</a></p>
 
         <h2><span class="num">2</span>Перечень собираемых персональных данных и цели обработки</h2>
 
@@ -342,7 +313,7 @@
 
         <h2><span class="num">4</span>Место хранения и передача данных</h2>
 
-        <p>Основное хранилище персональных данных — защищённый сервер на территории Республики Беларусь. Хостинг-провайдер: <span class="placeholder">[ УКАЗАТЬ, например hoster.by ]</span>.</p>
+        <p>Основное хранилище персональных данных — защищённый сервер на территории Республики Беларусь.</p>
 
         <p>Оператор не передаёт персональные данные третьим лицам для самостоятельной обработки.</p>
 
@@ -406,7 +377,7 @@
                 <tr>
                     <td>Хостинг-провайдер</td>
                     <td>Физическое размещение сервера и базы данных в Республике Беларусь</td>
-                    <td><span class="placeholder">[ УКАЗАТЬ ссылку ]</span></td>
+                    <td>—</td>
                 </tr>
             </tbody>
         </table>
@@ -443,7 +414,7 @@
 
         <div class="info-block">
             <p><strong>Онлайн-форма:</strong> <a href="withdraw-consent.html">pozit.by/withdraw-consent</a></p>
-            <p><strong>E-mail:</strong> <span class="placeholder">[ УКАЗАТЬ, например privacy@pozit.by ]</span></p>
+            <p><strong>E-mail:</strong> <a href="mailto:info@pozit.by">info@pozit.by</a></p>
             <p><strong>Телефон:</strong> <a href="tel:+375296877878">+375 (29) 687-78-78</a></p>
         </div>
 
