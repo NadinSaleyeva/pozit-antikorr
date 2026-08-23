@@ -557,6 +557,7 @@ main {
 /* === NEED CHECK SECTION === */
 .need-check-section {
     padding: 100px 0;
+    padding-top: 60px;
     background: #FAFAFA;
     position: relative;
     z-index: 5;
@@ -697,7 +698,7 @@ main {
 
     .need-check-section {
         padding: 40px 0;
-        padding-top: 20px;
+        padding-top: 15px;
     }
 
     .need-check-footer {
@@ -4344,7 +4345,7 @@ main {
 
     .quick-form-section {
         padding-top: 20px;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
     }
 
     .section-header {
@@ -6695,6 +6696,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
    ========================================== */
 .quick-form-section {
     padding: 100px 0;
+    padding-bottom: 60px;
     background: #FAFAFA;
     position: relative;
 }
