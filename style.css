@@ -6686,7 +6686,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
    QUICK REQUEST FORM (TOP)
    ========================================== */
 .quick-form-section {
-    padding: 80px 0 100px;
+    padding: 100px 0;
     background: #FAFAFA;
     position: relative;
 }
