@@ -696,7 +696,7 @@ main {
     }
 
     .need-check-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .need-check-footer {
@@ -791,7 +791,7 @@ main {
 
 @media (max-width: 576px) {
     .video-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .video-wrapper--vertical {
@@ -911,7 +911,7 @@ main {
 
 @media (max-width: 768px) {
     .benefits {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .benefits__grid {
@@ -2911,7 +2911,7 @@ main {
 
 @media (max-width: 576px) {
     .preparation-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .preparation-grid {
@@ -4278,6 +4278,7 @@ main {
 
     .hero {
         padding-top: 120px !important;
+        padding-bottom: 40px !important;
         background-position: 75% center;
     }
 
@@ -4335,8 +4336,9 @@ main {
     .guarantee-section,
     .faq-section,
     .reviews-section,
-    .contacts {
-        padding: 60px 0;
+    .contacts,
+    .quick-form-section {
+        padding: 40px 0;
     }
 
     .section-header {
@@ -4742,7 +4744,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: Reduce section padding on mobile for better vertical rhythm */
     .services {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .services__lead {
@@ -4807,12 +4809,12 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: Process section padding */
     .process-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     /* FIX: Materials section padding */
     .materials-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .materials-content {
@@ -4909,7 +4911,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
     }
 
     .guarantee-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .guarantee-card {
@@ -4928,7 +4930,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: FAQ section padding */
     .faq-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .faq-container {
@@ -4941,7 +4943,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: Reviews section – hide nav arrows that clip on small screens */
     .reviews-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .reviews-slider-container {
@@ -4963,7 +4965,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: Contacts section */
     .contacts {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .contacts__background-text {
@@ -5076,7 +5078,7 @@ body:has(.cookie-banner.active) .fab-v2-container {
 
     /* FIX: Before/after gallery padding adjustment */
     .before-after {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .comparison-card {
