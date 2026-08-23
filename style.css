@@ -4278,7 +4278,7 @@ main {
 
     .hero {
         padding-top: 120px !important;
-        padding-bottom: 20px !important;
+        padding-bottom: 10px !important;
         background-position: 75% center;
     }
 
@@ -4339,6 +4339,10 @@ main {
     .contacts,
     .quick-form-section {
         padding: 40px 0;
+    }
+
+    .quick-form-section {
+        padding-top: 20px;
     }
 
     .section-header {
