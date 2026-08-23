@@ -472,7 +472,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Google Ads — конверсия «Отправка формы»
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'conversion', {
-                            send_to: 'AW-18051828112/C-AtCKGrorMcEJCT5J9D'
+                            send_to: 'AW-18051828112/C-AtCKGrorMcEJCT5J9D',
+                            value: 1.0,
+                            currency: 'USD'
                         });
                         gtag('event', 'form_submit');
                     }
