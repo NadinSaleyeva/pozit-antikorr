@@ -303,7 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const FORM_ENDPOINT = '/api/callback.php';
 
     // Раздельные конверсии Google Ads / цели Яндекс.Метрики для верха и низа страницы.
-    // 'top' — заглушка до создания конверсии в Google Ads и цели в Яндекс.Метрике (см. план).
     const CONVERSION_LABELS = {
         bottom: 'AW-18051828112/C-AtCKGrorMcEJCT5J9D',
         top:    'AW-18051828112/f-26COXVyuYcEJCT5J9D'
