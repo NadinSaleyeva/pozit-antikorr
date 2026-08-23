@@ -697,6 +697,7 @@ main {
 
     .need-check-section {
         padding: 40px 0;
+        padding-top: 20px;
     }
 
     .need-check-footer {
@@ -4343,6 +4344,7 @@ main {
 
     .quick-form-section {
         padding-top: 20px;
+        padding-bottom: 10px;
     }
 
     .section-header {
