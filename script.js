@@ -299,30 +299,52 @@ document.addEventListener('DOMContentLoaded', () => {
         updateReviews();
     });
 
-    // === CONTACT FORM ===
-    const contactForm = document.getElementById('contactForm');
-    const formSuccess = document.getElementById('formSuccess');
-
-    // Record form load time for bot detection
-    const formLoadedAt = document.getElementById('formLoadedAt');
-    if (formLoadedAt) {
-        formLoadedAt.value = Date.now().toString();
-    }
-
-    // BACKEND URL — change this when hosting is ready
+    // === CONTACT FORMS (top + bottom) ===
     const FORM_ENDPOINT = '/api/callback.php';
 
-    if (contactForm) {
-        const formName = document.getElementById('formName');
-        const formPhone = document.getElementById('formPhone');
-        const formConsent = document.getElementById('formConsent');
-        const formHoneypot = document.getElementById('formHoneypot');
-        const submitBtn = document.getElementById('formSubmitBtn');
+    // Раздельные конверсии Google Ads / цели Яндекс.Метрики для верха и низа страницы.
+    // 'top' — заглушка до создания конверсии в Google Ads и цели в Яндекс.Метрике (см. план).
+    const CONVERSION_LABELS = {
+        bottom: 'AW-18051828112/C-AtCKGrorMcEJCT5J9D',
+        top:    'AW-18051828112/ЗАМЕНИТЬ_НА_LABEL_ИЗ_ШАГА_0'
+    };
+    const YM_GOALS = {
+        bottom: 'form_submit',
+        top:    'form_submit_top'
+    };
+
+    function initContactForm(card, location) {
+        if (!card) return;
+
+        const contactForm = card.querySelector('form.contact-form');
+        const formSuccess = card.querySelector('.contact-form__success');
+        if (!contactForm) return;
+
+        const formName     = contactForm.querySelector('[name="name"]');
+        const formPhoneHid = contactForm.querySelector('[name="phone"]');
+        const formMessage  = contactForm.querySelector('[name="message"]');
+        const formConsent  = contactForm.querySelector('[name="consent"]');
+        const formHoneypot = contactForm.querySelector('[name="website"]');
+        const formLoadedAt = contactForm.querySelector('[name="form_loaded_at"]');
+        const submitBtn    = contactForm.querySelector('.contact-form__submit');
 
         // Phone field: +375 (XX) XXX-XX-XX
-        const phoneField  = document.getElementById('phoneField');
-        const phoneNumber = document.getElementById('phoneNumber');
-        const phoneError  = document.getElementById('phoneError');
+        const phoneField  = contactForm.querySelector('.phone-field');
+        const phoneNumber = contactForm.querySelector('.phone-field__number');
+        const phoneError  = contactForm.querySelector('.phone-field__error');
+
+        const formErrorMsg  = contactForm.querySelector('.form-error-msg');
+        const formErrorText = formErrorMsg ? formErrorMsg.querySelector('span') : null;
+
+        // Скоуплено на карточку — у нижней формы заголовок/подзаголовок внутри карточки,
+        // у верхней их нет (заголовок вынесен в .section-header) — null здесь безопасен.
+        const formCardTitle    = card.querySelector('.contact-card__form-title');
+        const formCardSubtitle = card.querySelector('.contact-card__form-subtitle');
+
+        // Record form load time for bot detection
+        if (formLoadedAt) {
+            formLoadedAt.value = Date.now().toString();
+        }
 
         const applyPhoneMask = (digits) => {
             if (!digits.length) return '';
@@ -333,9 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const syncHiddenPhone = () => {
-            if (!formPhone || !phoneNumber) return;
+            if (!formPhoneHid || !phoneNumber) return;
             const digits = phoneNumber.value.replace(/\D/g, '');
-            formPhone.value = digits.length ? '+375 ' + applyPhoneMask(digits) : '';
+            formPhoneHid.value = digits.length ? '+375 ' + applyPhoneMask(digits) : '';
         };
 
         const showPhoneError = () => {
@@ -381,17 +403,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        const formErrorMsg  = document.getElementById('formErrorMsg');
-        const formErrorText = document.getElementById('formErrorText');
-
-        const formCardTitle  = document.querySelector('.contact-card__form-title');
-        const formCardSubtitle = document.querySelector('.contact-card__form-subtitle');
-
         const showSuccess = () => {
             contactForm.style.display = 'none';
             if (formCardTitle)    formCardTitle.style.display    = 'none';
             if (formCardSubtitle) formCardSubtitle.style.display = 'none';
-            formSuccess.style.display = 'flex';
+            if (formSuccess)      formSuccess.style.display = 'flex';
         };
 
         const resetBtn = () => {
@@ -407,13 +423,14 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const showFormError = (html) => {
+            if (!formErrorText || !formErrorMsg) return;
             formErrorText.innerHTML = html;
             formErrorMsg.style.display = 'flex';
             formErrorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         };
 
         const hideFormError = () => {
-            formErrorMsg.style.display = 'none';
+            if (formErrorMsg) formErrorMsg.style.display = 'none';
         };
 
         contactForm.addEventListener('submit', (e) => {
@@ -450,11 +467,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData();
             formData.append('name', formName.value.trim());
-            formData.append('phone', formPhone.value.trim());
-            formData.append('message', document.getElementById('formMessage').value.trim());
+            formData.append('phone', formPhoneHid.value.trim());
+            formData.append('message', formMessage.value.trim());
             formData.append('consent', formConsent.checked ? 'yes' : 'no');
             formData.append('consent_duration', '30 days');
-            formData.append('source', 'antikor-landing');
+            formData.append('source', location);
             formData.append('hp', formHoneypot ? formHoneypot.value : '');
             formData.append('loaded_at', formLoadedAt ? formLoadedAt.value : '');
 
@@ -469,18 +486,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data => {
                     if (data && data.status === 'error') throw new Error('server');
-                    // Google Ads — конверсия «Отправка формы»
+
+                    // Google Ads — раздельные конверсии для верха/низа страницы
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'conversion', {
-                            send_to: 'AW-18051828112/C-AtCKGrorMcEJCT5J9D',
+                            send_to: CONVERSION_LABELS[location],
                             value: 1.0,
                             currency: 'USD'
                         });
-                        gtag('event', 'form_submit');
+                        // Доп. параметр для сегментации в самом GA4 (не влияет на Ads/Метрику)
+                        gtag('event', 'form_submit', { form_location: location });
                     }
-                    // Яндекс Метрика — цель form_submit
+                    // Яндекс Метрика — раздельные цели для верха/низа страницы
                     if (typeof ym !== 'undefined') {
-                        ym(108994402, 'reachGoal', 'form_submit');
+                        ym(108994402, 'reachGoal', YM_GOALS[location]);
                     }
                     showSuccess();
                 })
@@ -497,6 +516,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     }
+
+    initContactForm(document.querySelector('#contacts .contact-card--form'), 'bottom');
+    initContactForm(document.querySelector('#quick-form .contact-card--form'), 'top');
 
     // === MODALS (Privacy Policy & Consent) ===
     const privacyModal = document.getElementById('privacyModal');

@@ -227,6 +227,64 @@
                 </div>
             </section>
 
+            <!-- === QUICK REQUEST FORM (TOP) === -->
+            <section id="quick-form" class="quick-form-section">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="section-subtitle">Онлайн-заявка</p>
+                        <h2 class="section-title">ОСТАВИТЬ <span>/</span> ЗАЯВКУ</h2>
+                        <p class="section-description">Заполните форму и мы свяжемся с вами в течение 30 минут</p>
+                    </div>
+                    <div class="quick-form-wrap fade-up">
+                        <div class="contact-card contact-card--form">
+                            <form class="contact-form" novalidate>
+                                <input type="hidden" name="form_loaded_at" value="">
+                                <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                                    <input type="text" name="website" tabindex="-1" autocomplete="off">
+                                </div>
+                                <div class="contact-form__two-col">
+                                    <div class="contact-form__group">
+                                        <input type="text" name="name" class="contact-form__input" placeholder="Ваше имя" required>
+                                    </div>
+                                    <div class="contact-form__group">
+                                        <div class="phone-field">
+                                            <span class="phone-field__prefix">+375</span>
+                                            <input type="text" class="phone-field__number"
+                                                   placeholder="(__) ___-__-__" maxlength="14" inputmode="numeric"
+                                                   autocomplete="off" aria-label="Номер телефона">
+                                        </div>
+                                        <span class="phone-field__error">Введите корректный номер телефона</span>
+                                        <input type="hidden" name="phone">
+                                    </div>
+                                </div>
+                                <div class="contact-form__group">
+                                    <textarea name="message" class="contact-form__input contact-form__textarea" placeholder="Опишите проблему или задачу" rows="3"></textarea>
+                                </div>
+                                <div class="contact-form__consent">
+                                    <label class="contact-form__checkbox-label">
+                                        <input type="checkbox" name="consent">
+                                        <span class="contact-form__checkmark"></span>
+                                        <span class="contact-form__consent-text">Я ознакомлен(-а) с <a href="legal/privacy-policy.html" class="contact-form__link" target="_blank">Политикой обработки персональных данных</a> и даю <a href="legal/consent.html" class="contact-form__link" target="_blank">согласие на обработку</a> моих персональных данных в целях организации обратного звонка. Срок действия согласия — 30 дней.</span>
+                                    </label>
+                                </div>
+                                <div class="form-error-msg" style="display:none;">
+                                    <iconify-icon icon="ph:warning-circle" width="20"></iconify-icon>
+                                    <span></span>
+                                </div>
+                                <div class="contact-form__submit-wrap">
+                                    <button type="submit" class="contact-form__submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+                                </div>
+                            </form>
+                            <div class="contact-form__success" style="display: none;">
+                                <iconify-icon icon="ph:check-circle-fill" width="56" style="color: #4CAF50;"></iconify-icon>
+                                <p class="contact-form__success-title">ЗАЯВКА ПРИНЯТА</p>
+                                <p class="contact-form__success-sub">Мы свяжемся с вами в ближайшее время</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- === PROBLEM / NEED CHECK SECTION === -->
             <section id="need-check" class="need-check-section">
                 <div class="container">
@@ -1594,7 +1652,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 
     <!-- Google Ads conversion tracking -->
     <script>

@@ -6681,3 +6681,23 @@ body:has(.cookie-banner.active) .fab-v2-container {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================
+   QUICK REQUEST FORM (TOP)
+   ========================================== */
+.quick-form-section {
+    padding: 80px 0 100px;
+    background: #FAFAFA;
+    position: relative;
+}
+
+.quick-form-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+@media (max-width: 860px) {
+    .quick-form-wrap {
+        max-width: 100%;
+    }
+}

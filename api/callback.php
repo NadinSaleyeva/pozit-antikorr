@@ -36,6 +36,8 @@ $name    = mb_substr(trim(strip_tags($_POST['name']    ?? '')), 0, 100);
 $phone   = mb_substr(trim(preg_replace('/[^\d+\-\(\)\s]/', '', $_POST['phone'] ?? '')), 0, 25);
 $message = mb_substr(trim(strip_tags($_POST['message'] ?? '')), 0, 500);
 $consent = ($_POST['consent'] ?? '') === 'yes';
+$source  = $_POST['source'] ?? '';
+$source  = in_array($source, ['top', 'bottom'], true) ? $source : 'bottom';
 
 if (empty($phone)) {
     http_response_code(422);
@@ -61,6 +63,7 @@ $row = [
     'name'       => $name,
     'phone'      => $phone,
     'message'    => $message,
+    'source'     => $source,
     'delete_at'  => $deleteAt,
     'ip'         => $_SERVER['REMOTE_ADDR'] ?? '',
 ];
@@ -89,6 +92,7 @@ appendToCsv(CONSENT_LOG_FILE, [
 // ── Telegram ────────────────────────────────────────────────
 sendTelegram(implode("\n", array_filter([
     "🔔 *Новая заявка* | " . SITE_LABEL,
+    "📍 Форма: " . ($source === 'top' ? 'Верх страницы' : 'Контакты (низ)'),
     "👤 " . ($name ?: '—'),
     "📞 `{$phone}`",
     $message ? "💬 {$message}" : '',
@@ -98,7 +102,10 @@ sendTelegram(implode("\n", array_filter([
 // ── Email ───────────────────────────────────────────────────
 sendEmail(
     "=?UTF-8?B?" . base64_encode("Новая заявка — " . SITE_LABEL) . "?=",
-    "Имя: " . ($name ?: '—') . "\nТелефон: {$phone}\nКомментарий: " . ($message ?: '—') . "\nВремя: {$now}"
+    "Имя: " . ($name ?: '—') . "\n" .
+    "Телефон: {$phone}\n" .
+    "Форма: " . ($source === 'top' ? 'Верх страницы' : 'Контакты (низ)') . "\n" .
+    "Комментарий: " . ($message ?: '—') . "\nВремя: {$now}"
 );
 
 exit(json_encode(['success' => true, 'id' => $appId]));
