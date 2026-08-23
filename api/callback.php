@@ -88,7 +88,7 @@ appendToCsv(CONSENT_LOG_FILE, [
 
 // ── Telegram ────────────────────────────────────────────────
 sendTelegram(implode("\n", array_filter([
-    "🔔 *Новая заявка*",
+    "🔔 *Новая заявка* | " . SITE_LABEL,
     "👤 " . ($name ?: '—'),
     "📞 `{$phone}`",
     $message ? "💬 {$message}" : '',
@@ -97,7 +97,7 @@ sendTelegram(implode("\n", array_filter([
 
 // ── Email ───────────────────────────────────────────────────
 sendEmail(
-    "=?UTF-8?B?" . base64_encode("Новая заявка — Антикор Pozit") . "?=",
+    "=?UTF-8?B?" . base64_encode("Новая заявка — " . SITE_LABEL) . "?=",
     "Имя: " . ($name ?: '—') . "\nТелефон: {$phone}\nКомментарий: " . ($message ?: '—') . "\nВремя: {$now}"
 );
 
@@ -204,23 +204,25 @@ function sendTelegram(string $text): void
         return;
     }
 
-    $ch = curl_init('https://api.telegram.org/bot' . TELEGRAM_BOT_TOKEN . '/sendMessage');
-    curl_setopt_array($ch, [
-        CURLOPT_POST           => true,
-        CURLOPT_POSTFIELDS     => json_encode([
-            'chat_id'    => TELEGRAM_CHAT_ID,
-            'text'       => $text,
-            'parse_mode' => 'Markdown',
-        ]),
-        CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT        => 5,
-    ]);
-    $result = curl_exec($ch);
-    if ($result === false) {
-        error_log('[POZIT] Telegram error: ' . curl_error($ch));
+    foreach (TELEGRAM_CHAT_IDS as $chatId) {
+        $ch = curl_init('https://api.telegram.org/bot' . TELEGRAM_BOT_TOKEN . '/sendMessage');
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => json_encode([
+                'chat_id'    => $chatId,
+                'text'       => $text,
+                'parse_mode' => 'Markdown',
+            ]),
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 5,
+        ]);
+        $result = curl_exec($ch);
+        if ($result === false) {
+            error_log('[POZIT] Telegram error: ' . curl_error($ch));
+        }
+        curl_close($ch);
     }
-    curl_close($ch);
 }
 
 function sendEmail(string $subject, string $body): void

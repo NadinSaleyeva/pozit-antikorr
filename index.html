@@ -80,7 +80,6 @@
         rel="stylesheet">
 
     <!-- Favicons -->
-    <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32.png">
@@ -104,6 +103,24 @@
       gtag('js', new Date());
       gtag('config', 'G-8RKCELH0NC');
       gtag('config', 'AW-18051828112');
+    </script>
+
+    <!-- Google Ads: конверсия "звонок с сайта" (клик по tel:) -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18051828112/tiErCNmlvJQcEJCT5J9D',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
     </script>
 
     <!-- Yandex.Metrika counter -->
@@ -144,7 +161,7 @@
 
                     <div class="header__actions">
                         <div class="header__contacts-row">
-                            <a href="tel:+375296877878" class="header__phone">+375 (29) 687-78-78</a>
+                            <a href="tel:+375296877878" class="header__phone" onclick="return gtag_report_conversion('tel:+375296877878');">+375 (29) 687-78-78</a>
                             <div class="header__socials">
                                 <!-- Telegram -->
                                 <a href="tg://resolve?phone=+375296877878" aria-label="Telegram"
@@ -469,7 +486,7 @@
                                 </div>
                                 <div class="material-price-row">
                                     <span class="material-name material-name--highlight">НА БАЗЕ MERCASOL</span>
-                                    <span class="material-price">от 750 руб.</span>
+                                    <span class="material-price">от 700 руб.</span>
                                 </div>
                             </div>
                         </div>
@@ -501,7 +518,7 @@
                                 </div>
                                 <div class="material-price-row">
                                     <span class="material-name material-name--highlight">НА БАЗЕ MERCASOL</span>
-                                    <span class="material-price">от 1100 руб.</span>
+                                    <span class="material-price">от 900 руб.</span>
                                 </div>
                             </div>
                         </div>
@@ -1234,7 +1251,7 @@
                             <div class="contact-card__call-row">
                                 <h3 class="contact-card__title"><iconify-icon icon="ph:phone-call" width="20" style="margin-right: 8px; vertical-align: -2px;"></iconify-icon>Позвонить</h3>
                                 <div class="contact-card__phone-wrap">
-                                    <a href="tel:+375296877878" class="contact-card__phone">+375 (29) 687-78-78</a>
+                                    <a href="tel:+375296877878" class="contact-card__phone" onclick="return gtag_report_conversion('tel:+375296877878');">+375 (29) 687-78-78</a>
                                     <span class="contact-card__phone-hint">нажмите чтобы позвонить</span>
                                 </div>
                             </div>
@@ -1305,8 +1322,9 @@
                         </div>
                     </form>
                     <div class="contact-form__success" id="formSuccess" style="display: none;">
-                        <iconify-icon icon="ph:check-circle-fill" width="48" style="color: #4CAF50;"></iconify-icon>
-                        <p>Заявка отправлена! Мы свяжемся с вами в ближайшее время.</p>
+                        <iconify-icon icon="ph:check-circle-fill" width="56" style="color: #4CAF50;"></iconify-icon>
+                        <p class="contact-form__success-title">ЗАЯВКА ПРИНЯТА</p>
+                        <p class="contact-form__success-sub">Мы свяжемся с вами в ближайшее время</p>
                     </div>
                 </div>
 
@@ -1455,7 +1473,7 @@
             <a class="fab-item viber" href="viber://chat?number=%2B375296877878" data-label="Viber" aria-label="Viber">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.398.002C9.473.028 5.331.344 3.014 2.467 1.294 4.187.693 6.7.633 9.823c-.04 3.122-.08 8.981 5.58 10.57h.003l-.003 2.429s-.036.983.612 1.18c.732.227 1.132-.435 1.85-1.222.394-.436.937-1.074 1.35-1.56 3.866.328 6.83-.42 7.17-.533.777-.252 5.176-.82 5.892-6.655.738-6.02-.36-9.82-2.34-11.54l-.01-.007c-.598-.55-3.002-2.302-8.378-2.322 0 0-.4-.026-1.002-.016zm.065 1.716c.51-.008.85.017.85.017 4.55.017 6.73 1.391 7.24 1.848 1.673 1.436 2.528 4.862 1.905 9.888-.596 4.881-4.163 5.19-4.818 5.4-.28.09-2.883.735-6.158.518 0 0-2.44 2.948-3.203 3.71-.123.132-.272.177-.365.16-.13-.03-.17-.195-.17-.42l.02-4.035c-4.795-1.324-4.48-6.32-4.44-8.93.06-2.606.528-4.74 1.99-6.17 1.952-1.76 5.516-2.015 7.145-2.028zm.34 2.561a.43.43 0 0 0-.43.436.426.426 0 0 0 .425.426c1.285-.01 2.351.412 3.228 1.272.877.86 1.309 1.977 1.309 3.388a.427.427 0 0 0 .426.425v-.003a.43.43 0 0 0 .432-.426c-.003-1.613-.523-2.962-1.557-4.016-1.038-1.056-2.332-1.516-3.823-1.5h-.01zm-3.795.77c-.198-.016-.395.022-.566.12h-.02c-.4.236-.76.536-1.066.89a.39.39 0 0 0-.075.1c-.162.2-.323.428-.404.713-.134.465-.062.928.17 1.58v.023c.377.89.908 1.734 1.523 2.55.48.657.993 1.29 1.538 1.896.555.603 1.146 1.175 1.768 1.71l.02.023c.797.68 1.662 1.276 2.578 1.784 1.025.563 1.762.777 2.26.777h.02a1.6 1.6 0 0 0 .71-.183c.288-.088.512-.253.708-.418.055-.05.117-.1.17-.15.268-.265.6-.59.74-.96.22-.49.095-.91.095-.97-.07-.2-1.04-.68-1.59-1.07-.547-.39-1.1-.68-1.49-.78-.37-.1-.6.05-.78.22-.06.05-.12.1-.18.15-.183.155-.28.25-.45.33-.17.08-.32.12-.43.12-.09 0-.18-.04-.45-.15a8.2 8.2 0 0 1-1.39-.8 7.72 7.72 0 0 1-1.34-1.2c-.33-.3-.63-.65-.85-.97-.21-.3-.37-.61-.45-.88-.08-.28-.04-.55.05-.78.03-.08.07-.16.12-.22.16-.18.33-.36.5-.54.08-.09.15-.19.19-.27.08-.16.03-.34-.18-.68-.19-.32-.42-.66-.65-1.01l-.21-.33a1.85 1.85 0 0 0-.43-.67c-.12-.13-.3-.21-.48-.22zm5.05.19a.41.41 0 0 0-.42.41.423.423 0 0 0 .41.43h.02c.928.024 1.742.323 2.35.93.608.608.907 1.42.93 2.35v.015a.424.424 0 0 0 .84 0v-.012c-.024-1.14-.38-2.17-1.14-2.95h-.03c-.77-.77-1.83-1.14-2.96-1.17zm.376 1.672a.424.424 0 0 0-.42.422v.01a.424.424 0 0 0 .424.422c.438.003.78.164 1.01.404.23.24.376.582.376 1.02v.008a.427.427 0 0 0 .424.424.425.425 0 0 0 .426-.426v-.01c0-.622-.22-1.175-.596-1.57-.375-.395-.923-.64-1.62-.647z"/></svg>
             </a>
-            <a class="fab-item phone" href="tel:+375296877878" data-label="+375 (29) 687-78-78" aria-label="Позвонить">
+            <a class="fab-item phone" href="tel:+375296877878" data-label="+375 (29) 687-78-78" aria-label="Позвонить" onclick="return gtag_report_conversion('tel:+375296877878');">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
             </a>
         </div>
@@ -1583,12 +1601,7 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-      // Клик по телефону — конверсия "Звонок с сайта"
-      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-        el.addEventListener('click', function() {
-          gtag('event', 'conversion', {'send_to': 'AW-18051828112/tiErCNmlvJQcEJCT5J9D'});
-        });
-      });
+      // Клик по телефону — конверсия "Звонок с сайта" (теперь через onclick="gtag_report_conversion(...)" на самих кнопках)
 
       // Клик по Telegram — конверсия "Клик Telegram"
       document.querySelectorAll('a[href*="t.me"], a[href*="telegram"], a[href*="tg://"]').forEach(function(el) {

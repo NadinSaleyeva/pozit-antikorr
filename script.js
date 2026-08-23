@@ -384,9 +384,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const formErrorMsg  = document.getElementById('formErrorMsg');
         const formErrorText = document.getElementById('formErrorText');
 
+        const formCardTitle  = document.querySelector('.contact-card__form-title');
+        const formCardSubtitle = document.querySelector('.contact-card__form-subtitle');
+
         const showSuccess = () => {
             contactForm.style.display = 'none';
-            formSuccess.style.display = 'block';
+            if (formCardTitle)    formCardTitle.style.display    = 'none';
+            if (formCardSubtitle) formCardSubtitle.style.display = 'none';
+            formSuccess.style.display = 'flex';
         };
 
         const resetBtn = () => {
@@ -433,6 +438,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             clearPhoneError();
 
+            // Validate consent checkbox
+            if (!formConsent.checked) {
+                showFormError('Пожалуйста, установите галочку согласия на обработку персональных данных');
+                shakeBtn();
+                return;
+            }
+
             submitBtn.disabled = true;
             submitBtn.textContent = 'ОТПРАВКА...';
 
@@ -457,6 +469,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data => {
                     if (data && data.status === 'error') throw new Error('server');
+                    // Google Ads — конверсия «Отправка формы»
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'conversion', {
+                            send_to: 'AW-18051828112/C-AtCKGrorMcEJCT5J9D'
+                        });
+                        gtag('event', 'form_submit');
+                    }
+                    // Яндекс Метрика — цель form_submit
+                    if (typeof ym !== 'undefined') {
+                        ym(108994402, 'reachGoal', 'form_submit');
+                    }
                     showSuccess();
                 })
                 .catch(err => {
