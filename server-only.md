@@ -1,13 +1,15 @@
 # Только на сервере — не перезаписывать
 
-## Google Ads метки конверсий (уже есть в index.html — сверять при каждом обновлении)
+## Google Ads метки конверсий (уже есть в index.html/script.js — сверять при каждом обновлении)
 
-| Событие           | Метка                                        |
-|-------------------|----------------------------------------------|
-| Форма (submit)    | AW-18051828112/tiErCNmlvJQcEJCT5J9D          |
-| Telegram (клик)   | AW-18051828112/Rd5-CMGkvpQcEJCT5J9D          |
-| WhatsApp (клик)   | AW-18051828112/Rd5-CMGkvpQcEJCT5J9D          |
-| Телефон (клик)    | AW-18051828112/aacdCMSkvpQcEJCT5J9D          |
+| Событие                  | Метка                                        |
+|--------------------------|-----------------------------------------------|
+| Форма — верхняя (submit) | AW-18051828112/f-26COXVyuYcEJCT5J9D          |
+| Форма — нижняя (submit)  | AW-18051828112/C-AtCKGrorMcEJCT5J9D          |
+| Телефон (клик tel:)      | AW-18051828112/tiErCNmlvJQcEJCT5J9D          |
+| Telegram (клик)          | AW-18051828112/Rd5-CMGkvpQcEJCT5J9D          |
+| WhatsApp (клик)          | AW-18051828112/Rd5-CMGkvpQcEJCT5J9D          |
+| Viber (клик)             | AW-18051828112/aacdCMSkvpQcEJCT5J9D          |
 
 ## Yandex Metrika
 - ID счётчика: `108994402`
